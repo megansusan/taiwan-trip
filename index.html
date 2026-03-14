@@ -11,7 +11,7 @@
     :root {
       --red: #c0392b;
       --gold: #d4a843;
-      --cream: #fdf6ec;
+      --cream: #f5f4ed;
       --dark: #1a1a2e;
       --gray: #6b7280;
       --light-gray: #f3f4f6;
@@ -27,28 +27,32 @@
     .hero::before { display: none; }
     .hero-flag { font-size: 2.4rem; margin-bottom: 10px; }
     .hero h1 { font-family: 'DM Sans', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; letter-spacing: -1.5px; margin-bottom: 12px; }
-    .hero-subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.8); font-weight: 300; margin-bottom: 28px; letter-spacing: 0.5px; }
+    .hero-subtitle { font-size: 1rem; color: rgba(255,255,255,0.8); font-weight: 300; margin-bottom: 28px; letter-spacing: 0.5px; }
     .hero-tags { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-    .hero-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; }
+    .hero-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; }
 
     /* NAV */
     .city-nav { background: white; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; padding: 0 20px; }
     .city-nav-inner { max-width: 1100px; margin: 0 auto; display: flex; overflow-x: auto; justify-content: center; scrollbar-width: none; }
     .city-nav-inner::-webkit-scrollbar { display: none; }
-    .city-nav a { padding: 16px 20px; text-decoration: none; color: var(--gray); font-size: 0.88rem; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; border-radius: 0; }
+    .city-nav a { padding: 16px 20px; text-decoration: none; color: var(--gray); font-size: 0.9rem; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; border-radius: 0; }
     .city-nav a:hover { color: var(--dark); border-color: var(--red); }
     .city-nav a:active { background: #f3f4f6; color: var(--dark); }
     .city-nav a.active { color: var(--dark); border-color: var(--red); font-weight: 600; }
+    .city-nav a[href="#taipei"].active, .city-nav a[href="#taipei2"].active { border-color: #ffd2c7; }
+    .city-nav a[href="#taichung"].active { border-color: #A9C5A0; }
+    .city-nav a[href="#chiayi"].active { border-color: #E6E18F; }
+    .city-nav a[href="#tainan"].active { border-color: #D5C6E0; }
 
     /* MAIN */
     .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 
     /* OVERVIEW */
     .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 60px; }
-    .overview-card { background: white; border-radius: 16px; padding: 14px 24px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+    .overview-card { background: white; border-radius: 12px; padding: 14px 24px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
     .overview-card .icon { font-size: 1.5rem; margin-bottom: 4px; }
-    .overview-card .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); }
-    .overview-card .value { font-size: 1.05rem; font-weight: 600; margin-top: 2px; }
+    .overview-card .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); }
+    .overview-card .value { font-size: 1rem; font-weight: 600; margin-top: 2px; }
 
     /* COLLAPSIBLE CITY SECTION */
     .city-section { margin-bottom: 24px; scroll-margin-top: 60px; background: white; border-radius: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); overflow: hidden; }
@@ -58,11 +62,14 @@
       border-bottom: 2px solid var(--light-gray); transition: background 0.15s;
     }
     .city-toggle:hover { background: #fafafa; }
+    .city-toggle:active { background: #fafafa; }
+    .city-toggle { -webkit-tap-highlight-color: transparent; }
     .city-toggle .city-emoji { font-size: 1.8rem; flex-shrink: 0; }
     .city-toggle-info { flex: 1; }
-    .city-toggle-info h2 { font-family: 'DM Sans', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.1; }
-    .city-toggle-info p { color: var(--gray); font-size: 0.88rem; margin-top: 2px; }
-    .city-dates { background: var(--red); color: white; padding: 6px 14px; border-radius: 8px; font-size: 0.82rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+    .city-toggle-info h2 { font-family: 'DM Sans', sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.1; display: flex; align-items: center; gap: 8px; color: #000000; }
+    .city-zh { font-family: 'Yu Mincho +36p Kana', '游明朝 +36p かな', YuMincho, 'Yu Mincho', '游明朝', serif; font-weight: 400; color: #000000; font-size: 0.75em; }
+    .city-toggle-info p { color: var(--gray); font-size: 0.9rem; margin-top: 2px; }
+    .city-dates { background: var(--red); color: white; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
     .city-chevron { font-size: 1.2rem; color: var(--gray); transition: transform 0.3s; flex-shrink: 0; }
     .city-section.collapsed .city-chevron { transform: rotate(-90deg); }
     .city-section.collapsed .city-toggle { border-bottom: none; }
@@ -70,16 +77,16 @@
     /* CITY COLOR HEADERS */
     #taipei .city-dates, #taipei2 .city-dates { background: #ffd2c7; color: #7a3060; }
     #taipei .city-toggle, #taipei2 .city-toggle { border-left: 4px solid #ffd2c7; }
-    #taipei .city-toggle:hover, #taipei2 .city-toggle:hover { background: #fff5f0; }
+    #taipei .city-toggle:hover, #taipei2 .city-toggle:hover { background: #fafafa; }
     #taichung .city-dates { background: #A9C5A0; color: #2d5028; }
     #taichung .city-toggle { border-left: 4px solid #A9C5A0; }
-    #taichung .city-toggle:hover { background: #f0f7ee; }
+    #taichung .city-toggle:hover { background: #fafafa; }
     #chiayi .city-dates { background: #E6E18F; color: #5a5400; }
     #chiayi .city-toggle { border-left: 4px solid #E6E18F; }
-    #chiayi .city-toggle:hover { background: #fafbe8; }
+    #chiayi .city-toggle:hover { background: #fafafa; }
     #tainan .city-dates { background: #D5C6E0; color: #3a2060; }
     #tainan .city-toggle { border-left: 4px solid #D5C6E0; }
-    #tainan .city-toggle:hover { background: #f5f0fa; }
+    #tainan .city-toggle:hover { background: #fafafa; }
 
     /* FOOD STRIP - removed */
 
@@ -91,12 +98,12 @@
     }
     .overview-card.countdown-active { animation: pulse-ring 2.5s ease-out infinite; }
 
-    .city-body { padding: 28px; }
-    .city-section.collapsed .city-body { display: none; }
+    .city-body { padding: 28px; max-height: 6000px; overflow: hidden; opacity: 1; transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease; }
+    .city-section.collapsed .city-body { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; }
 
     /* CARDS */
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .card { background: var(--light-gray); border-radius: 14px; padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
+    .card { background: var(--light-gray); border-radius: 12px; padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
     .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.09); }
     .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
     .card-icon { font-size: 1.3rem; }
@@ -105,7 +112,7 @@
     .card ul li { padding: 7px 0; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem; display: flex; gap: 8px; }
     .card ul li:last-child { border-bottom: none; }
     .card ul li::before { content: '→'; color: var(--red); flex-shrink: 0; font-size: 0.8rem; margin-top: 3px; }
-    .card .tag { display: inline-block; background: #fff3cd; color: #856404; font-size: 0.68rem; padding: 2px 7px; border-radius: 10px; font-weight: 600; margin-left: 5px; vertical-align: middle; }
+    .card .tag { display: inline-block; background: #fff3cd; color: #856404; font-size: 0.7rem; padding: 2px 7px; border-radius: 8px; font-weight: 600; margin-left: 5px; vertical-align: middle; }
     .card .tag.must { background: #fde8e8; color: var(--red); }
     .card .tag.free { background: #d1fae5; color: #065f46; }
 
@@ -116,13 +123,13 @@
     .photo-item { flex-shrink: 0; width: 190px; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.12); text-decoration: none; display: block; }
     .photo-item img { width: 100%; height: 130px; object-fit: cover; display: block; transition: transform 0.3s; }
     .photo-item:hover img { transform: scale(1.05); }
-    .photo-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: white; font-size: 0.72rem; font-weight: 500; padding: 18px 9px 7px; }
-    .photo-search-hint { position: absolute; top: 7px; right: 7px; background: rgba(0,0,0,0.5); color: white; font-size: 0.62rem; padding: 2px 6px; border-radius: 7px; opacity: 0; transition: opacity 0.2s; }
+    .photo-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); color: white; font-size: 0.7rem; font-weight: 500; padding: 18px 9px 7px; }
+    .photo-search-hint { position: absolute; top: 7px; right: 7px; background: rgba(0,0,0,0.5); color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 7px; opacity: 0; transition: opacity 0.2s; }
     .photo-item:hover .photo-search-hint { opacity: 1; }
 
     /* HASHTAG BAR */
-    .hashtag-bar { background: #f0f4ff; border-radius: 10px; padding: 12px 18px; margin-top: 20px; font-size: 0.82rem; color: var(--gray); }
-    .hashtag-bar span { color: #3b82f6; font-weight: 500; margin-right: 8px; }
+    .hashtag-bar { background: var(--light-gray); border-radius: 8px; padding: 12px 18px; margin-top: 20px; font-size: 0.8rem; color: var(--gray); }
+    .hashtag-bar span { color: var(--dark); font-weight: 600; margin-right: 8px; }
 
 
     /* MAP */
@@ -130,23 +137,23 @@
     .map-section h2 { font-family: 'DM Sans', sans-serif; font-size: 1.8rem; margin-bottom: 8px; }
     .map-section > p { color: var(--gray); font-size: 0.9rem; margin-bottom: 20px; }
     .map-route { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .map-city-pill { background: var(--dark); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 500; }
+    .map-city-pill { background: var(--dark); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
     .map-arrow { color: var(--red); font-weight: bold; }
-    .map-date { color: var(--gray); font-size: 0.75rem; }
+    .map-date { color: var(--gray); font-size: 0.8rem; }
     .maps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .map-frame-wrap h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
+    .map-frame-wrap h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
     .map-frame-wrap iframe { width: 100%; height: 190px; border: none; border-radius: 12px; display: block; }
 
 
     /* QUICK TIPS STRIP */
     .quick-tips { margin-bottom: 40px; }
-    .quick-tips-label { font-size: 0.72rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
+    .quick-tips-label { font-size: 0.7rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
     .quick-tips-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    .quick-tip { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.5); border: 1px dashed #c9cdd4; border-radius: 20px; padding: 7px 14px; font-size: 0.8rem; color: var(--dark); text-decoration: none; transition: border-color 0.15s, background 0.15s; white-space: nowrap; }
-    .quick-tip:hover { border-color: #9ca3af; background: rgba(255,255,255,0.8); }
+    .quick-tip { display: flex; align-items: center; gap: 7px; background: white; border: 1px solid #e5e7eb; border-radius: 20px; padding: 7px 14px; font-size: 0.8rem; color: var(--dark); text-decoration: none; transition: border-color 0.15s, background 0.15s; white-space: nowrap; }
+    .quick-tip:hover { border-color: #d1d5db; background: #f9f9f9; }
     .quick-tip-icon { font-size: 0.95rem; }
     .quick-tip-text strong { font-weight: 600; }
-    .quick-tip-text span { color: var(--gray); font-size: 0.75rem; display: block; line-height: 1.2; margin-top: 1px; }
+    .quick-tip-text span { color: var(--gray); font-size: 0.8rem; display: block; line-height: 1.2; margin-top: 1px; }
 
     /* TIPS */
     .tips-section { background: white; border-radius: 20px; padding: 48px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
@@ -154,22 +161,35 @@
     .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
     .tip-item { display: flex; gap: 14px; }
     .tip-icon { font-size: 1.5rem; flex-shrink: 0; }
-    .tip-item h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
-    .tip-item p { font-size: 0.83rem; color: var(--gray); }
+    .tip-item h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .tip-item p { font-size: 0.8rem; color: var(--gray); }
 
-    footer { text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.85rem; }
+    footer { text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.9rem; }
 
     /* DAY TABS */
-    .day-tab-btns { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; margin-bottom: 12px; }
+    .day-tab-btns { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; margin-bottom: 16px; }
     .day-tab-btns::-webkit-scrollbar { display: none; }
-    .day-tab-btn { background: #f3f4f6; border: none; border-radius: 20px; padding: 7px 18px; font-size: 0.82rem; font-weight: 500; color: var(--gray); cursor: pointer; white-space: nowrap; transition: background 0.2s, color 0.2s; flex-shrink: 0; }
-    .day-tab-btn.active { background: var(--dark); color: white; }
+    .day-tab-btn { background: white; border: 1.5px solid #e5e7eb; border-radius: 20px; padding: 10px 16px 8px; cursor: pointer; white-space: nowrap; transition: all 0.18s; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 54px; -webkit-tap-highlight-color: transparent; }
+    .day-tab-btn .tab-weekday { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gray); transition: color 0.18s; }
+    .day-tab-btn .tab-date { font-size: 0.9rem; font-weight: 700; color: var(--dark); transition: color 0.18s; }
+    .day-tab-btn:hover { background: #f7f7f7; border-color: #d1d5db; }
+    .day-tab-btn.active { border-color: transparent; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .day-tab-btn.active .tab-weekday { opacity: 1; }
+    #taipei .day-tab-btn.active, #taipei2 .day-tab-btn.active { background: #fff5fa; }
+    #taipei .day-tab-btn.active .tab-weekday, #taipei2 .day-tab-btn.active .tab-weekday { color: #7a3060; }
+    #taipei .day-tab-btn.active .tab-date, #taipei2 .day-tab-btn.active .tab-date { color: #7a3060; }
+    #taichung .day-tab-btn.active { background: #f4f7f3; }
+    #taichung .day-tab-btn.active .tab-weekday, #taichung .day-tab-btn.active .tab-date { color: #2d5028; }
+    #chiayi .day-tab-btn.active { background: #f9f8e8; }
+    #chiayi .day-tab-btn.active .tab-weekday, #chiayi .day-tab-btn.active .tab-date { color: #5a5400; }
+    #tainan .day-tab-btn.active { background: #f5f2fa; }
+    #tainan .day-tab-btn.active .tab-weekday, #tainan .day-tab-btn.active .tab-date { color: #3a2060; }
 
     /* REC SECTION — interactive tabbed recommendations */
     .rec-section { margin-bottom: 24px; }
     .rec-tabs { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 12px; }
     .rec-tabs::-webkit-scrollbar { display: none; }
-    .rec-tab { background: #f3f4f6; border: none; border-radius: 20px; padding: 7px 16px; font-size: 0.82rem; font-weight: 500; color: var(--gray); cursor: pointer; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
+    .rec-tab { background: #f3f4f6; border: none; border-radius: 20px; padding: 7px 16px; font-size: 0.8rem; font-weight: 500; color: var(--gray); cursor: pointer; white-space: nowrap; transition: all 0.2s; flex-shrink: 0; }
     .rec-tab.active { background: var(--dark); color: white; }
     .rec-panels { display: none; }
     .rec-panels.open { display: block; }
@@ -179,10 +199,10 @@
     .rec-item:active { opacity: 0.85; }
     .rec-item-header { display: flex; align-items: center; gap: 10px; padding: 13px 16px; cursor: pointer; user-select: none; }
     .rec-item-header-left { flex: 1; min-width: 0; }
-    .rec-item-name { font-size: 0.88rem; font-weight: 600; color: var(--dark); line-height: 1.3; }
-    .rec-item-sub { font-size: 0.74rem; color: var(--gray); margin-top: 2px; }
+    .rec-item-name { font-size: 0.9rem; font-weight: 600; color: var(--dark); line-height: 1.3; }
+    .rec-item-sub { font-size: 0.7rem; color: var(--gray); margin-top: 2px; }
     .rec-item-badges { display: flex; gap: 5px; margin-top: 5px; flex-wrap: wrap; }
-    .rec-badge { font-size: 0.64rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; }
+    .rec-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 8px; }
     .rec-badge.must { background: #fde8e8; color: var(--red); }
     .rec-badge.free { background: #d1fae5; color: #065f46; }
     .rec-arrow { color: #9ca3af; font-size: 1rem; transition: transform 0.2s; flex-shrink: 0; }
@@ -193,7 +213,7 @@
     .rec-detail { font-size: 0.8rem; color: var(--gray); line-height: 1.6; border-top: 1px solid #f0f0f0; padding-top: 10px; }
     .rec-detail strong { color: var(--dark); }
     .rec-links { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-    .rec-link { font-size: 0.75rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; text-decoration: none; border: 1px solid #e5e7eb; color: var(--dark); background: white; transition: background 0.15s; }
+    .rec-link { font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; text-decoration: none; border: 1px solid #e5e7eb; color: var(--dark); background: white; transition: background 0.15s; }
     .rec-link:active { background: #f3f4f6; }
     .day-plan.day-tab-hidden { display: none; }
     .day-plan.day-tab-active > summary { display: none; }
@@ -208,12 +228,12 @@
     .trip-cal-title { font-family: 'DM Sans', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; }
     .trip-cal-title span { color: var(--red); }
     .cal-grid-wrap { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-    .cal-day-hdr { text-align: center; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); padding-bottom: 8px; }
-    .cal-cell { border-radius: 10px; padding: 8px 6px; min-height: 64px; display: flex; flex-direction: column; background: var(--light-gray); min-width: 0; }
+    .cal-day-hdr { text-align: center; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); padding-bottom: 8px; }
+    .cal-cell { border-radius: 12px; padding: 8px 6px; min-height: 64px; display: flex; flex-direction: column; background: var(--light-gray); min-width: 0; }
     .cal-cell.other-month { background: transparent; }
     .cal-cell.other-month .cal-num { color: #d1d5db; }
-    .cal-num { font-size: 0.78rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; line-height: 1; }
-    .cal-city { font-size: 0.6rem; font-weight: 600; padding: 2px 5px; border-radius: 6px; line-height: 1.4; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .cal-num { font-size: 0.8rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; line-height: 1; }
+    .cal-city { font-size: 0.7rem; font-weight: 600; padding: 2px 5px; border-radius: 6px; line-height: 1.4; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .cal-city.secondary { font-size: 0.55rem; font-weight: 500; opacity: 0.85; }
 
     .cal-cell.taipei { background: #fff5fa; }
@@ -229,7 +249,7 @@
     .cal-cell.taipei2 .cal-city { background: #ffd2c7; color: #7a3060; }
 
     .cal-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
-    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--dark); }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 0.8rem; color: var(--dark); }
     .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
     .legend-dot.taipei-dot { background: #ffd2c7; }
     .legend-dot.taichung-dot { background: #A9C5A0; }
@@ -254,7 +274,7 @@
       .cal-city { font-size: 0.52rem; padding: 1px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
       .cal-city.secondary { display: none; }
       .cal-legend { gap: 12px; }
-      .legend-item { font-size: 0.72rem; }
+      .legend-item { font-size: 0.7rem; }
       .trip-link::after { display: none; }
     }
 
@@ -262,18 +282,26 @@
     .city-section.partial-group .city-dates { background: #0f766e; }
     .city-section.partial-group .city-toggle { border-left: 4px solid #0f766e; }
     .city-section.partial-group .city-toggle:hover { background: #f0fdf9; }
-    .hotel-notice { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px 18px; font-size: 0.82rem; margin-bottom: 20px; display: flex; align-items: center; gap: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .hotel-notice { background: #f9f9f9; border: 1px solid #e5e7eb; border-left: 4px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; font-size: 0.8rem; margin-bottom: 20px; display: flex; align-items: center; gap: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
     .hotel-notice .hotel-name { font-weight: 700; font-size: 0.95rem; color: var(--dark); }
-    .hotel-notice .hotel-detail { color: var(--gray); font-size: 0.78rem; margin-top: 3px; }
-    .hotel-notice .hotel-tag { background: #f3f4f6; color: var(--dark); font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; border: 1px solid #e5e7eb; }
-    .flight-notice { background: #0f172a; color: white; border-radius: 10px; padding: 14px 18px; font-size: 0.82rem; margin-bottom: 12px; }
-    .flight-notice .flight-header { font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
+    .hotel-notice .hotel-detail { color: var(--gray); font-size: 0.8rem; margin-top: 3px; }
+    .hotel-notice .hotel-tag { background: #f3f4f6; color: var(--dark); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; border: 1px solid #e5e7eb; }
+    #taipei .hotel-notice, #taipei2 .hotel-notice { background: #fefbfa; border-color: #edddd8; border-left-color: #e8c8c0; }
+    #taipei .hotel-tag, #taipei2 .hotel-tag { background: #f5e4e0; color: #7a3060; border-color: #edddd8; }
+    #taichung .hotel-notice { background: #f9fbf8; border-color: #c8dbc4; border-left-color: #b8cfb3; }
+    #taichung .hotel-tag { background: #deeadb; color: #2d5028; border-color: #c8dbc4; }
+    #chiayi .hotel-notice { background: #fefefc; border-color: #dddaa8; border-left-color: #d0cc90; }
+    #chiayi .hotel-tag { background: #eceabc; color: #5a5400; border-color: #dddaa8; }
+    #tainan .hotel-notice { background: #fdfcfe; border-color: #ddd4e8; border-left-color: #cbbedd; }
+    #tainan .hotel-tag { background: #ebe4f2; color: #3a2060; border-color: #ddd4e8; }
+    .flight-notice { background: #0f172a; color: white; border-radius: 12px; padding: 14px 18px; font-size: 0.8rem; margin-bottom: 12px; }
+    .flight-notice .flight-header { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.6px; color: rgba(255,255,255,0.45); margin-bottom: 10px; }
     .flight-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; flex-wrap: wrap; }
     .flight-row:last-child { margin-bottom: 0; }
-    .flight-num { background: #f97316; color: white; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: 0.5px; white-space: nowrap; }
+    .flight-num { background: #f97316; color: white; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; letter-spacing: 0.5px; white-space: nowrap; }
     .flight-times { font-weight: 700; font-size: 0.9rem; }
-    .flight-arrow { color: rgba(255,255,255,0.4); font-size: 0.75rem; }
-    .flight-pax { color: rgba(255,255,255,0.55); font-size: 0.75rem; }
+    .flight-arrow { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+    .flight-pax { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
 
     /* ACCORDION ITEMS */
     .card ul { list-style: none; }
@@ -281,35 +309,34 @@
     .card details:last-child { border-bottom: none; }
     .card details summary { padding: 8px 0; font-size: 0.9rem; cursor: pointer; display: flex; align-items: flex-start; gap: 8px; list-style: none; user-select: none; }
     .card details summary::-webkit-details-marker { display: none; }
-    .card details summary::before { content: '▸'; color: var(--red); flex-shrink: 0; font-size: 0.75rem; margin-top: 4px; }
+    .card details summary::before { content: '▸'; color: var(--red); flex-shrink: 0; font-size: 0.8rem; margin-top: 4px; }
     .partial-group .card details summary::before { color: #0f766e; }
     .card details[open] summary::before { content: '▾'; }
-    .card-item-body { padding: 4px 0 10px 18px; font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+    .card-item-body { padding: 4px 0 10px 18px; font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
     .card-item-body p { margin-bottom: 3px; }
 
     /* FLIGHTS */
     .flights-section { margin-bottom: 32px; }
     .flights-section h2 { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
     .flights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-    .flight-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+    .flight-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
     .flight-card-header { background: linear-gradient(135deg, #0f766e, #0d9488); color: white; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; }
     .flight-card-header.group2 { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
-    .flight-card-header.return { background: linear-gradient(135deg, #4c1d95, #6d28d9); }
-    .flight-airline { font-size: 0.78rem; font-weight: 600; opacity: 0.85; }
+    .flight-card-header.return { background: linear-gradient(135deg, #7c6aaa, #a892d0); }
+    .flight-airline { font-size: 0.8rem; font-weight: 600; opacity: 0.85; }
     .flight-number { font-size: 1rem; font-weight: 700; }
     .flight-card-body { padding: 18px 20px; }
     .flight-route { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
     .flight-city { text-align: center; }
     .flight-city .code { font-size: 1.6rem; font-weight: 700; font-family: 'DM Sans', sans-serif; letter-spacing: -1px; }
-    .flight-city .name { font-size: 0.72rem; color: var(--gray); }
+    .flight-city .name { font-size: 0.7rem; color: var(--gray); }
     .flight-city .time { font-size: 1rem; font-weight: 600; margin-top: 2px; }
     .flight-arrow { flex: 1; text-align: center; position: relative; }
     .flight-arrow::before { content: ''; display: block; height: 1px; background: #e5e7eb; }
-    .flight-arrow span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--cream); padding: 0 6px; font-size: 0.75rem; color: var(--gray); white-space: nowrap; }
-    .flight-meta { display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid #f3f4f6; font-size: 0.78rem; color: var(--gray); }
-    .flight-meta span strong { display: block; color: var(--dark); font-size: 0.82rem; }
-    .flight-passengers { font-size: 0.78rem; color: #0f766e; font-weight: 500; margin-top: 8px; }
-    .flight-card-header.group2 + .flight-card-body .flight-passengers { color: #1a1a2e; }
+    .flight-arrow span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--cream); padding: 0 6px; font-size: 0.8rem; color: var(--gray); white-space: nowrap; }
+    .flight-meta { display: flex; align-items: center; gap: 16px; padding-top: 12px; border-top: 1px solid #f3f4f6; font-size: 0.8rem; color: var(--gray); }
+    .flight-meta span strong { display: block; color: var(--dark); font-size: 0.8rem; }
+    .flight-passengers { font-size: 0.8rem; color: #0f766e; font-weight: 500; margin-left: auto; }
     .flight-placeholder { opacity: 0.45; font-style: italic; }
     .flights-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; scrollbar-width: none; -ms-overflow-style: none; }
     .flights-carousel::-webkit-scrollbar { display: none; }
@@ -318,21 +345,28 @@
     .carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: #d1d5db; transition: background 0.2s, width 0.2s; cursor: pointer; }
     .carousel-dot.active { background: var(--dark); width: 18px; border-radius: 3px; }
 
-    .getting-there { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; font-size: 0.83rem; color: var(--dark); }
-    .getting-there strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); margin-bottom: 8px; }
+    .getting-there { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; font-size: 0.8rem; color: var(--dark); }
+    .getting-there strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); margin-bottom: 8px; }
     .getting-there .route-steps { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .getting-there .step { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px 12px; font-size: 0.8rem; font-weight: 500; }
-    .getting-there .step-arrow { color: var(--gray); font-size: 0.75rem; }
-    .getting-there .step-note { font-size: 0.78rem; color: var(--gray); margin-top: 8px; }
+    .getting-there .step-arrow { color: var(--gray); font-size: 0.8rem; }
+    .getting-there .step-note { font-size: 0.8rem; color: var(--gray); margin-top: 8px; }
+    details.getting-there { padding: 0; }
+    details.getting-there summary { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; cursor: pointer; list-style: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+    details.getting-there summary::-webkit-details-marker { display: none; }
+    details.getting-there summary strong { margin-bottom: 0; }
+    details.getting-there .gt-chevron { font-size: 0.7rem; color: var(--gray); transition: transform 0.2s; flex-shrink: 0; }
+    details.getting-there[open] .gt-chevron { transform: rotate(90deg); }
+    details.getting-there .gt-body { padding: 0 18px 14px; border-top: 1px solid #e2e8f0; padding-top: 12px; }
 
     /* DAY PLAN TIMELINE */
     .day-plans-wrap { margin-bottom: 24px; }
-    .day-plans-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 10px; }
+    .day-plans-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 10px; }
     .day-plan { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; margin-bottom: 8px; }
     .day-plan summary { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; list-style: none; user-select: none; }
     .day-plan summary::-webkit-details-marker { display: none; }
     .day-plan[open] summary { border-bottom: 1px solid #e2e8f0; background: white; }
-    .day-plan-title { flex: 1; font-size: 0.88rem; font-weight: 600; }
+    .day-plan-title { flex: 1; font-size: 0.9rem; font-weight: 600; }
     .day-chevron { font-size: 0.7rem; color: var(--gray); transition: transform 0.2s; }
     .day-plan[open] .day-chevron { transform: rotate(90deg); }
     .day-badge { background: var(--dark); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
@@ -344,23 +378,44 @@
     .timeline-item::before { content: ''; position: absolute; left: -25px; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: white; border: 2px solid #cbd5e1; z-index: 1; }
     .timeline-item.highlight::before { background: var(--red); border-color: var(--red); width: 11px; height: 11px; left: -26px; top: 5px; box-shadow: 0 0 0 4px rgba(220,38,38,0.1); }
     .partial-group .timeline-item.highlight::before { background: #0f766e; border-color: #0f766e; box-shadow: 0 0 0 4px rgba(15,118,110,0.1); }
-    .timeline-time { display: inline-block; font-size: 0.68rem; font-weight: 700; color: var(--gray); background: #f1f5f9; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.3px; margin-bottom: 5px; }
+    .timeline-time { display: inline-block; font-size: 0.7rem; font-weight: 700; color: var(--gray); background: #f1f5f9; padding: 2px 8px; border-radius: 20px; letter-spacing: 0.3px; margin-bottom: 5px; }
     .timeline-item.highlight .timeline-time { background: #fef2f2; color: var(--red); }
     .partial-group .timeline-item.highlight .timeline-time { background: #f0fdf9; color: #0f766e; }
     .timeline-text { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
-    .timeline-note { font-size: 0.76rem; color: var(--gray); margin-top: 4px; line-height: 1.5; }
+    .timeline-note { font-size: 0.8rem; color: var(--gray); margin-top: 4px; line-height: 1.5; }
+
+    /* CITY-SPECIFIC TIMELINE DOT COLORS */
+    #taipei .timeline-item::before, #taipei2 .timeline-item::before { border-color: #ffd2c7; }
+    #taipei .timeline-item.highlight::before, #taipei2 .timeline-item.highlight::before { background: #d4728a; border-color: #d4728a; box-shadow: 0 0 0 4px rgba(212,114,138,0.15); }
+    #taipei .timeline-item.highlight .timeline-time, #taipei2 .timeline-item.highlight .timeline-time { background: #fde8f2; color: #b05070; }
+    #taipei .timeline::before, #taipei2 .timeline::before { background: linear-gradient(to bottom, #ffd2c7, transparent); }
+
+    #taichung .timeline-item::before { border-color: #A9C5A0; }
+    #taichung .timeline-item.highlight::before { background: #4aab40; border-color: #4aab40; box-shadow: 0 0 0 4px rgba(74,171,64,0.15); }
+    #taichung .timeline-item.highlight .timeline-time { background: #eaf7e8; color: #2d7828; }
+    #taichung .timeline::before { background: linear-gradient(to bottom, #A9C5A0, transparent); }
+
+    #chiayi .timeline-item::before { border-color: #c8c360; }
+    #chiayi .timeline-item.highlight::before { background: #b3ac10; border-color: #b3ac10; box-shadow: 0 0 0 4px rgba(179,172,16,0.15); }
+    #chiayi .timeline-item.highlight .timeline-time { background: #fafbe8; color: #8a8500; }
+    #chiayi .timeline::before { background: linear-gradient(to bottom, #E6E18F, transparent); }
+
+    #tainan .timeline-item::before { border-color: #D5C6E0; }
+    #tainan .timeline-item.highlight::before { background: #7c4ec8; border-color: #7c4ec8; box-shadow: 0 0 0 4px rgba(124,78,200,0.15); }
+    #tainan .timeline-item.highlight .timeline-time { background: #f0eafa; color: #6038b0; }
+    #tainan .timeline::before { background: linear-gradient(to bottom, #D5C6E0, transparent); }
 
     /* FOOD COLLAGE */
     .food-collage { margin-bottom: 24px; }
     .food-collage-title { font-family: 'DM Sans', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; }
     .food-collage-title span { color: var(--red); }
     .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 220px 180px; gap: 10px; }
-    .bento-item { border-radius: 16px; overflow: hidden; position: relative; cursor: pointer; }
+    .bento-item { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
     .bento-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
     .bento-item:hover img { transform: scale(1.06); }
     .bento-item .bento-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.72)); color: white; padding: 20px 14px 10px; font-size: 0.8rem; font-weight: 600; opacity: 0; transition: opacity 0.2s; }
     .bento-item:hover .bento-label { opacity: 1; }
-    .bento-item .bento-city { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.45); color: white; font-size: 0.65rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .bento-item .bento-city { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.45); color: white; font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
     .bento-hero { grid-column: span 2; grid-row: span 2; }
     .bento-tall { grid-row: span 2; }
 
@@ -373,7 +428,7 @@
 
     /* ITEM LINKS */
     .item-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; padding-top: 8px; border-top: 1px solid #efefef; }
-    .item-link { font-size: 0.72rem; padding: 4px 10px; border-radius: 20px; text-decoration: none; font-weight: 500; transition: opacity 0.2s; white-space: nowrap; }
+    .item-link { font-size: 0.7rem; padding: 4px 10px; border-radius: 20px; text-decoration: none; font-weight: 500; transition: opacity 0.2s; white-space: nowrap; }
     .item-link:hover { opacity: 0.75; }
     .item-link.photos { background: #eff6ff; color: #2563eb; }
     .item-link.ig { background: #fdf2f8; color: #db2777; }
@@ -381,14 +436,15 @@
     .item-link.maps { background: #f0fdf4; color: #16a34a; }
 
     /* ALTERNATIVE OPTION */
-    .alt-option { margin-top: 20px; border: 1.5px dashed #f59e0b; border-radius: 14px; overflow: hidden; }
+    .alt-option { margin-top: 20px; border: 1.5px dashed #f59e0b; border-radius: 12px; overflow: hidden; }
     .alt-option summary { display: flex; align-items: center; gap: 10px; padding: 14px 18px; cursor: pointer; list-style: none; user-select: none; background: #fffbeb; }
     .alt-option summary::-webkit-details-marker { display: none; }
     .alt-option[open] summary { border-bottom: 1.5px dashed #f59e0b; }
     .alt-badge { background: #f59e0b; color: white; font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
-    .alt-title { flex: 1; font-size: 0.88rem; font-weight: 600; color: #92400e; }
+    .alt-title { flex: 1; font-size: 0.9rem; font-weight: 600; color: #92400e; }
     .alt-body { padding: 18px; background: #fffbeb; }
     .alt-body .getting-there { background: white; }
+    #taichung .getting-there { background: transparent; }
     .alt-body .day-plan { background: white; }
     .alt-body .day-plan[open] summary { background: #fffbeb; }
     .alt-body .cards-grid { margin-top: 16px; }
@@ -400,7 +456,7 @@
       .city-toggle { padding: 16px 18px; gap: 10px; }
       .city-toggle .city-emoji { font-size: 1.4rem; }
       .city-toggle-info h2 { font-size: 1.4rem; }
-      .city-dates { font-size: 0.72rem; padding: 4px 10px; }
+      .city-dates { font-size: 0.7rem; padding: 4px 10px; }
       .city-body { padding: 16px; }
       .cards-grid { grid-template-columns: 1fr; }
       .overview-grid { grid-template-columns: repeat(2, 1fr); }
@@ -408,7 +464,7 @@
       .maps-grid { grid-template-columns: 1fr; }
       .tips-section { padding: 28px 20px; }
       .tips-grid { grid-template-columns: 1fr; }
-      .city-nav a { padding: 14px 14px; font-size: 0.82rem; }
+      .city-nav a { padding: 14px 14px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -606,9 +662,8 @@
           </div>
           <div class="flight-meta">
             <span><strong>~4h 35m</strong>Duration</span>
-            <span><a href="https://www.flightradar24.com/data/flights/br226" target="_blank" style="color:#0f766e; font-weight:600; font-size:0.8rem; text-decoration:none;">🟢 Flight Status</a></span>
+            <div class="flight-passengers">👥 Yanni · Jason · Susan · Jo</div>
           </div>
-          <div class="flight-passengers">👥 Yanni · Jason · Susan · Jo</div>
         </div>
       </div>
 
@@ -640,8 +695,8 @@
           </div>
           <div class="flight-meta">
             <span><strong>~4h 45m</strong>Duration</span>
+            <div class="flight-passengers" style="color:#0f3460;">👥 Sol · Katie</div>
           </div>
-          <div class="flight-passengers" style="color:#0f3460;">👥 Sol · Katie</div>
         </div>
       </div>
 
@@ -649,10 +704,10 @@
       <div class="flight-card">
         <div class="flight-card-header return">
           <div>
-            <div class="flight-airline" style="opacity:0.75;">— TBC —</div>
-            <div class="flight-number flight-placeholder">Return</div>
+            <div class="flight-airline">Singapore Airlines</div>
+            <div class="flight-number">SQ879</div>
           </div>
-          <div style="text-align:right; font-size:0.78rem; opacity:0.85;">
+          <div style="text-align:right; font-size:0.8rem; opacity:0.85;">
             <div>Return</div>
             <div>May 3, 2026</div>
           </div>
@@ -662,20 +717,20 @@
             <div class="flight-city">
               <div class="code">TPE</div>
               <div class="name">Taipei Taoyuan</div>
-              <div class="time flight-placeholder">--:--</div>
+              <div class="time">17:45</div>
             </div>
             <div class="flight-arrow"><span>✈ direct</span></div>
             <div class="flight-city">
               <div class="code">SIN</div>
               <div class="name">Singapore Changi</div>
-              <div class="time flight-placeholder">--:--</div>
+              <div class="time">22:15</div>
             </div>
           </div>
           <div class="flight-meta">
-            <span><strong class="flight-placeholder">~4h 30m</strong>Duration</span>
-            <span><strong class="flight-placeholder">TBC</strong>Flight no.</span>
+            <span><strong>4h 30m</strong>Duration</span>
+            <span><strong>SQ879</strong>Flight no.</span>
+            <div class="flight-passengers" style="color:#7c6aaa;">👥 Full group</div>
           </div>
-          <div class="flight-passengers" style="color:#6d28d9;">👥 Full group</div>
         </div>
       </div>
 
@@ -690,9 +745,8 @@
   <!-- TAIPEI -->
   <section class="city-section partial-group" id="taipei">
     <button class="city-toggle" onclick="toggleCity(this)">
-      <span class="city-emoji">🏙</span>
       <div class="city-toggle-info">
-        <h2>Taipei</h2>
+        <h2>Taipei <span class="city-zh">台北</span></h2>
         <p>Capital city vibes — streets full of cafes, night markets & history</p>
       </div>
       <div class="city-dates">Apr 24 – 25</div>
@@ -1022,9 +1076,8 @@
   <!-- TAICHUNG -->
   <section class="city-section partial-group" id="taichung">
     <button class="city-toggle" onclick="toggleCity(this)">
-      <span class="city-emoji">🏙</span>
       <div class="city-toggle-info">
-        <h2>Taichung</h2>
+        <h2>Taichung <span class="city-zh">台中</span></h2>
         <p>Taiwan's coolest city — great food, cafes & night markets, with a Lukang day trip</p>
       </div>
       <div class="city-dates">Apr 26 – 27</div>
@@ -1032,24 +1085,27 @@
     </button>
     <div class="city-body">
       <p style="font-size:0.82rem; color:var(--gray); margin-bottom:12px;">👥 Yanni · Jason · Susan · Jo</p>
-      <div class="getting-there">
-        <strong>🚄 Getting There — Taipei → Taichung</strong>
+      <a href="https://maps.app.goo.gl/aRxyBi7wkvJhyuvx6" target="_blank" style="text-decoration:none;">
+      <div class="hotel-notice" style="cursor:pointer;">
+        <span style="font-size:1.6rem">🏨</span>
+        <div>
+          <div class="hotel-name">Manho Hotel 缦和旅居 <span class="hotel-tag">2 Nights</span></div>
+          <div class="hotel-detail">No. 145, Minzu Rd, Central District, Taichung · Apr 26–27 · <span style="color:#0f766e;">📍 Google Maps</span></div>
+        </div>
+      </div>
+      </a>
+
+      <details class="getting-there">
+        <summary><strong>🚄 Getting There — Taipei → Taichung</strong><span class="gt-chevron">▸</span></summary>
+        <div class="gt-body">
         <div class="route-steps">
           <span class="step">🚄 HSR Taipei → Taichung</span>
           <span class="step-arrow">→</span>
           <span class="step">~55min</span>
         </div>
         <div class="step-note">Leave Taipei after noon · Arrive Taichung ~14:00–15:00 · Drop bags then explore</div>
-      </div>
-
-      <div class="hotel-notice">
-        <span style="font-size:1.6rem">🏨</span>
-        <div>
-          <div class="hotel-name">Hotel in Taichung <span class="hotel-tag">2 Nights</span></div>
-          <div class="hotel-detail">Taichung city center · Apr 26–27 · Near Calligraphy Greenway or train station area is ideal</div>
         </div>
-      </div>
-
+      </details>
       <!-- DAY PLANS: TAICHUNG -->
       <div class="day-plans-wrap">
         <p class="day-plans-label">📅 Day by Day</p>
@@ -1066,11 +1122,6 @@
               <div class="timeline-time">~13:00</div>
               <div class="timeline-text">🚄 HSR Taipei → Taichung (~55min)</div>
               <div class="timeline-note">Book tickets in advance at thsrc.com.tw. Arrive ~14:00–14:30</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">~15:00</div>
-              <div class="timeline-text">🍦 Miyahara Ice Cream (宮原眼科)</div>
-              <div class="timeline-note">Restored 1927 Japanese optician's clinic turned stunning dessert shop. The interior is incredible — 20 Zhongshan Rd</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">16:30</div>
@@ -1157,24 +1208,9 @@
       </div>
 
       <div class="photo-gallery">
-        <a class="photo-item" href="https://www.google.com/search?q=Miyahara+ice+cream+Taichung+宮原眼科&tbm=isch" target="_blank">
-          <img src="images/taichung/miyahara.jpg" alt="Miyahara" />
-          <div class="photo-caption">Miyahara (宮原眼科)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Rainbow+Village+Taichung+彩虹眷村&tbm=isch" target="_blank">
-          <img src="images/taichung/rainbow-village.jpg" alt="Rainbow Village" />
-          <div class="photo-caption">Rainbow Village (彩虹眷村)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Fengjia+Night+Market+Taichung&tbm=isch" target="_blank">
-          <img src="images/taichung/fengjia.jpg" alt="Fengjia Night Market" />
-          <div class="photo-caption">Fengjia Night Market (逢甲夜市)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
         <a class="photo-item" href="https://www.google.com/search?q=Lukang+Old+Street+Taiwan&tbm=isch" target="_blank">
           <img src="images/lukang/old-street.jpg" alt="Lukang Old Street" />
-          <div class="photo-caption">Lukang Old Street</div>
+          <div class="photo-caption">Lukang Old Street (鹿港老街)</div>
           <div class="photo-search-hint">🔍 Search photos</div>
         </a>
         <a class="photo-item" href="https://www.google.com/search?q=Nine+Turns+Lane+Lukang&tbm=isch" target="_blank">
@@ -1184,12 +1220,17 @@
         </a>
         <a class="photo-item" href="https://www.google.com/search?q=Lukang+Tianhou+Mazu+Temple&tbm=isch" target="_blank">
           <img src="images/lukang/mazu-temple.jpg" alt="Mazu Temple" />
-          <div class="photo-caption">Lukang Mazu Temple</div>
+          <div class="photo-caption">Lukang Mazu Temple (天后宮)</div>
           <div class="photo-search-hint">🔍 Search photos</div>
         </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Lukang+Longshan+Temple+Taiwan&tbm=isch" target="_blank">
-          <img src="images/lukang/longshan-temple.jpg" alt="Longshan Temple" />
-          <div class="photo-caption">Longshan Temple</div>
+        <a class="photo-item" href="https://www.google.com/search?q=Lukang+glass+crafts+Taiwan&tbm=isch" target="_blank">
+          <img src="images/lukang/glass-crafts.jpg" alt="Glass Crafts" />
+          <div class="photo-caption">Lukang Glass Crafts</div>
+          <div class="photo-search-hint">🔍 Search photos</div>
+        </a>
+        <a class="photo-item" href="https://www.google.com/search?q=Lukang+ox+tongue+pastry+鳳眼糕&tbm=isch" target="_blank">
+          <img src="images/lukang/ox-tongue-pastry.jpg" alt="Ox Tongue Pastry" />
+          <div class="photo-caption">Ox Tongue Pastry (鳳眼糕)</div>
           <div class="photo-search-hint">🔍 Search photos</div>
         </a>
       </div>
@@ -1205,17 +1246,6 @@
 
           <!-- Highlights -->
           <div class="rec-panel active">
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Miyahara Ice Cream (宮原眼科)</div>
-                  <div class="rec-item-sub">Must-visit dessert spot in a 1927 Japanese building</div>
-                  <div class="rec-item-badges"><span class="rec-badge must">must</span></div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> 20 Zhongshan Rd, Central District<br><strong>⏰</strong> 10am–10pm<br><br>A restored 1927 Japanese optician building turned into a magical ice cream and pineapple cake shop. The interior is stunning.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Miyahara+Taichung" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/宮原眼科/" target="_blank">📸 Instagram</a></div></div>
-            </div>
             <div class="rec-item" onclick="this.classList.toggle('open')">
               <div class="rec-item-header">
                 <div class="rec-item-header-left">
@@ -1428,9 +1458,8 @@
   <!-- CHIAYI -->
   <section class="city-section partial-group" id="chiayi">
     <button class="city-toggle" onclick="toggleCity(this)">
-      <span class="city-emoji">🌲</span>
       <div class="city-toggle-info">
-        <h2>Chiayi</h2>
+        <h2>Chiayi <span class="city-zh">嘉義</span></h2>
         <p>Charming Japanese colonial town — quick stop for turkey rice & coffin bread</p>
       </div>
       <div class="city-dates">Apr 28 · Stopover</div>
@@ -1438,15 +1467,17 @@
     </button>
     <div class="city-body">
       <p style="font-size:0.82rem; color:var(--gray); margin-bottom:12px;">👥 Yanni · Jason · Susan · Jo</p>
-      <div class="getting-there">
-        <strong>🚄 Getting There — Taichung → Chiayi</strong>
+      <details class="getting-there">
+        <summary><strong>🚄 Getting There — Taichung → Chiayi</strong><span class="gt-chevron">▸</span></summary>
+        <div class="gt-body">
         <div class="route-steps">
           <span class="step">🚄 HSR Taichung → Chiayi</span>
           <span class="step-arrow">→</span>
           <span class="step">~40min</span>
         </div>
         <div class="step-note">~40min · Drop bags at luggage storage near the station then explore on foot</div>
-      </div>
+        </div>
+      </details>
 
       <!-- DAY PLANS: CHIAYI -->
       <div class="day-plans-wrap">
@@ -1490,7 +1521,7 @@
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">~17:30</div>
-              <div class="timeline-text">🏨 Check in to Tainan hotel</div>
+              <div class="timeline-text">🏨 Check in to 香格里拉台南 (Shangri-La Tainan)</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">19:00</div>
@@ -1706,11 +1737,6 @@
                   <div class="timeline-text">🚕 Arrive Taichung from Lukang</div>
                   <div class="timeline-note">~25–30min by taxi. Drop bags at a luggage storage spot near the station</div>
                 </div>
-                <div class="timeline-item highlight">
-                  <div class="timeline-time">10:30</div>
-                  <div class="timeline-text">🍦 Miyahara Ice Cream (宮原眼科)</div>
-                  <div class="timeline-note">Former 1927 Japanese optician's clinic turned stunning dessert shop. The pineapple cakes here are famous — don't miss them</div>
-                </div>
                 <div class="timeline-item">
                   <div class="timeline-time">12:00</div>
                   <div class="timeline-text">🌿 Calligraphy Greenway (草悟道)</div>
@@ -1743,7 +1769,6 @@
           <div class="cards-grid" style="margin-top:16px;">
             <div class="card">
               <div class="card-header"><span class="card-icon">⭐</span><h3>Taichung Highlights</h3></div>
-              <details><summary><span>Miyahara Ice Cream (宮原眼科) — must-visit dessert spot</span></summary><div class="card-item-body"><p>📍 20 Zhongshan Rd, Central District · ⏰ 10am–10pm</p><p>A restored 1927 Japanese optician building turned into a magical ice cream and pineapple cake shop. The interior is stunning.</p></div></details>
               <details><summary><span>Rainbow Village (彩虹眷村) — colourful mural village</span></summary><div class="card-item-body"><p>📍 56 Chun'an Rd, Nantun District · Free · ⏰ Open daily</p><p>An 80-year-old veteran painted every surface of this tiny village to save it from demolition. Very photogenic.</p></div></details>
               <details><summary><span>Calligraphy Greenway (草悟道) — trendy boulevard</span></summary><div class="card-item-body"><p>📍 Yingcai Rd area, West District</p><p>1.6km green corridor lined with cafes, bookshops and boutiques. Great for a stroll.</p></div></details>
               <details><summary><span>Fengjia Night Market (逢甲夜市) — one of Taiwan's biggest</span></summary><div class="card-item-body"><p>📍 Wenhua Rd, Xitun District · ⏰ 4pm–1am</p><p>Enormous night market near Feng Chia University. Great variety of street food and shopping.</p></div></details>
@@ -1760,17 +1785,27 @@
   <!-- TAINAN -->
   <section class="city-section" id="tainan">
     <button class="city-toggle" onclick="toggleCity(this)">
-      <span class="city-emoji">🏯</span>
       <div class="city-toggle-info">
-        <h2>Tainan</h2>
+        <h2>Tainan <span class="city-zh">台南</span></h2>
         <p>Taiwan's oldest city — the best food scene, indie cafes & lantern-lit streets</p>
       </div>
       <div class="city-dates">Apr 28 – May 1</div>
       <span class="city-chevron">▾</span>
     </button>
     <div class="city-body">
-      <div class="getting-there">
-        <strong>🚄 Getting There — Taichung → Chiayi → Tainan</strong>
+      <a href="https://maps.google.com/?q=Shangri-La+Tainan,+89+Zhonghua+E+Rd+Sec+1,+East+District,+Tainan" target="_blank" style="text-decoration:none;">
+      <div class="hotel-notice" style="cursor:pointer;">
+        <span style="font-size:1.6rem">🏨</span>
+        <div>
+          <div class="hotel-name">香格里拉台南 (Shangri-La Tainan) <span class="hotel-tag">3 Nights</span></div>
+          <div class="hotel-detail">89 Zhonghua E Rd Sec 1, East District · Apr 28–May 1 · <span style="color:#0f766e;">📍 Google Maps</span></div>
+        </div>
+      </div>
+      </a>
+
+      <details class="getting-there">
+        <summary><strong>🚄 Getting There — Taichung → Chiayi → Tainan</strong><span class="gt-chevron">▸</span></summary>
+        <div class="gt-body">
         <div class="route-steps">
           <span class="step">🚄 HSR Chiayi → Tainan</span>
           <span class="step-arrow">→</span>
@@ -1781,7 +1816,8 @@
           <span class="step">~30min</span>
         </div>
         <div class="step-note">Total ~1hr · HSR Tainan Station is outside the city — take the free shuttle bus or taxi (~NT$300) to the center</div>
-      </div>
+        </div>
+      </details>
 
       <!-- DAY PLANS: TAINAN -->
       <div class="day-plans-wrap">
@@ -2115,7 +2151,6 @@
   <!-- BACK TO TAIPEI -->
   <section class="city-section" id="taipei2">
     <button class="city-toggle" onclick="toggleCity(this)">
-      <span class="city-emoji">🏙</span>
       <div class="city-toggle-info">
         <h2>Back to Taipei</h2>
         <p>Final days — last bites, last cafes, last shopping before heading home</p>
@@ -2124,8 +2159,19 @@
       <span class="city-chevron">▾</span>
     </button>
     <div class="city-body">
-      <div class="getting-there">
-        <strong>🚄 Getting There — Tainan → Taipei</strong>
+      <a href="https://maps.google.com/?q=Episode+by+Hyatt+Da'an+Taipei" target="_blank" style="text-decoration:none;">
+      <div class="hotel-notice" style="cursor:pointer;">
+        <span style="font-size:1.6rem">🏨</span>
+        <div>
+          <div class="hotel-name">Episode by Hyatt Da'an Taipei <span class="hotel-tag">2 Nights</span></div>
+          <div class="hotel-detail">Da'an District, Taipei · May 2–3 · <span style="color:#0f766e;">📍 Google Maps</span></div>
+        </div>
+      </div>
+      </a>
+
+      <details class="getting-there">
+        <summary><strong>🚄 Getting There — Tainan → Taipei</strong><span class="gt-chevron">▸</span></summary>
+        <div class="gt-body">
         <div class="route-steps">
           <span class="step">🚌 Shuttle to HSR Tainan Station</span>
           <span class="step-arrow">→</span>
@@ -2134,7 +2180,8 @@
           <span class="step">~1hr 45min</span>
         </div>
         <div class="step-note">Total ~2hrs · Book HSR in advance at thsrc.com.tw · Arrive at Taipei Main Station</div>
-      </div>
+        </div>
+      </details>
 
       <!-- DAY PLANS: BACK TO TAIPEI -->
       <div class="day-plans-wrap">
@@ -2461,6 +2508,10 @@
 ">↑</button>
 
 <script>
+  if (history.scrollRestoration) history.scrollRestoration = 'manual';
+  if (window.location.hash) history.replaceState(null, '', window.location.pathname);
+  window.addEventListener('load', () => window.scrollTo(0, 0));
+
   function toggleCity(btn) {
     const section = btn.closest('.city-section');
     section.classList.toggle('collapsed');
@@ -2524,14 +2575,16 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach(s => observer.observe(s));
 
-  // Rec section tabs — collapsed by default, reveal on first tap
+  // Rec section tabs — first tab open by default
   document.querySelectorAll('.rec-section').forEach(section => {
     const tabs = section.querySelectorAll('.rec-tab');
     const panelsWrap = section.querySelector('.rec-panels');
     const panels = section.querySelectorAll('.rec-panel');
-    // Start fully collapsed — no active tab or panel
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
+    if (tabs.length > 0) {
+      tabs[0].classList.add('active');
+      panels[0].classList.add('active');
+      panelsWrap.classList.add('open');
+    }
     tabs.forEach((tab, i) => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -2547,16 +2600,27 @@
   document.querySelectorAll('.day-plans-wrap').forEach(wrap => {
     if (wrap.closest('.alt-option')) return;
     const plans = Array.from(wrap.querySelectorAll(':scope > details.day-plan'));
-    if (plans.length <= 1) return;
+    if (plans.length < 1) return;
     const label = wrap.querySelector('.day-plans-label');
     if (label) label.style.display = 'none';
     const tabBtns = document.createElement('div');
     tabBtns.className = 'day-tab-btns';
+    const monthMap = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+    const weekdays = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
     plans.forEach((plan, i) => {
       const badge = plan.querySelector('.day-badge');
+      const badgeText = badge ? badge.textContent.trim() : 'Day ' + (i + 1);
       const btn = document.createElement('button');
       btn.className = 'day-tab-btn' + (i === 0 ? ' active' : '');
-      btn.textContent = badge ? badge.textContent.trim() : 'Day ' + (i + 1);
+      const parts = badgeText.split(' ');
+      let weekday = '';
+      if (parts.length === 2 && monthMap[parts[0]] !== undefined) {
+        const d = new Date(2026, monthMap[parts[0]], parseInt(parts[1]));
+        weekday = weekdays[d.getDay()];
+      }
+      btn.innerHTML = weekday
+        ? '<span class="tab-weekday">' + weekday + '</span><span class="tab-date">' + badgeText + '</span>'
+        : '<span class="tab-date">' + badgeText + '</span>';
       btn.addEventListener('click', () => {
         tabBtns.querySelectorAll('.day-tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -2565,6 +2629,10 @@
           p.classList.toggle('day-tab-hidden', j !== i);
           p.open = j === i;
         });
+        const btnLeft = btn.offsetLeft;
+        const btnWidth = btn.offsetWidth;
+        const wrapWidth = tabBtns.offsetWidth;
+        tabBtns.scrollTo({ left: btnLeft - wrapWidth / 2 + btnWidth / 2, behavior: 'smooth' });
       });
       tabBtns.appendChild(btn);
     });
@@ -2588,6 +2656,11 @@
   }, { threshold: 0.06 });
   document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
+  // Collapse all city sections except the first
+  document.querySelectorAll('.city-section').forEach((section, i) => {
+    if (i > 0) section.classList.add('collapsed');
+  });
+
   // Countdown card
   (function() {
     const tripStart = new Date('2026-04-24T00:00:00');
@@ -2607,6 +2680,35 @@
       document.querySelector('#countdownCard .label').textContent = "You're Here!";
       val.textContent = 'Day ' + day + ' of 10';
       val.style.color = '#059669';
+      card.style.cursor = 'pointer';
+      card.title = 'Go to today\'s plan';
+      card.addEventListener('click', () => {
+        const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const todayLabel = months[today.getMonth()] + ' ' + today.getDate();
+        let targetSection = null, targetIdx = -1, targetWrap = null;
+        document.querySelectorAll('.day-plans-wrap').forEach(wrap => {
+          const plans = Array.from(wrap.querySelectorAll(':scope > details.day-plan'));
+          plans.forEach((plan, i) => {
+            const badge = plan.querySelector('.day-badge');
+            if (badge && badge.textContent.trim() === todayLabel) {
+              targetSection = wrap.closest('.city-section');
+              targetWrap = wrap;
+              targetIdx = i;
+            }
+          });
+        });
+        if (targetSection) {
+          targetSection.classList.remove('collapsed');
+          if (targetWrap && targetIdx >= 0) {
+            const tabBtns = targetWrap.querySelector('.day-tab-btns');
+            if (tabBtns) {
+              const btn = tabBtns.querySelectorAll('.day-tab-btn')[targetIdx];
+              if (btn) btn.click();
+            }
+          }
+          setTimeout(() => targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+        }
+      });
     } else {
       document.querySelector('#countdownCard .icon').textContent = '✨';
       document.querySelector('#countdownCard .label').textContent = 'Trip Done';
