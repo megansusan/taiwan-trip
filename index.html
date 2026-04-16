@@ -41,7 +41,6 @@
     .city-nav a.active { color: var(--dark); border-color: var(--red); font-weight: 600; }
     .city-nav a[href="#taipei"].active, .city-nav a[href="#taipei2"].active { border-color: #ffd2c7; }
     .city-nav a[href="#taichung"].active { border-color: #A9C5A0; }
-    .city-nav a[href="#chiayi"].active { border-color: #E6E18F; }
     .city-nav a[href="#tainan"].active { border-color: #D5C6E0; }
 
     /* MAIN */
@@ -81,9 +80,6 @@
     #taichung .city-dates { background: #A9C5A0; color: #2d5028; }
     #taichung .city-toggle { border-left: 4px solid #A9C5A0; }
     #taichung .city-toggle:hover { background: #fafafa; }
-    #chiayi .city-dates { background: #E6E18F; color: #5a5400; }
-    #chiayi .city-toggle { border-left: 4px solid #E6E18F; }
-    #chiayi .city-toggle:hover { background: #fafafa; }
     #tainan .city-dates { background: #D5C6E0; color: #3a2060; }
     #tainan .city-toggle { border-left: 4px solid #D5C6E0; }
     #tainan .city-toggle:hover { background: #fafafa; }
@@ -180,8 +176,6 @@
     #taipei .day-tab-btn.active .tab-date, #taipei2 .day-tab-btn.active .tab-date { color: #7a3060; }
     #taichung .day-tab-btn.active { background: #f4f7f3; }
     #taichung .day-tab-btn.active .tab-weekday, #taichung .day-tab-btn.active .tab-date { color: #2d5028; }
-    #chiayi .day-tab-btn.active { background: #f9f8e8; }
-    #chiayi .day-tab-btn.active .tab-weekday, #chiayi .day-tab-btn.active .tab-date { color: #5a5400; }
     #tainan .day-tab-btn.active { background: #f5f2fa; }
     #tainan .day-tab-btn.active .tab-weekday, #tainan .day-tab-btn.active .tab-date { color: #3a2060; }
 
@@ -241,8 +235,6 @@
     .cal-cell.taichung { background: #f4f7f3; }
     .cal-cell.taichung .cal-city { background: #A9C5A0; color: #2d5028; }
     .cal-cell.taichung .cal-city.secondary { background: #c5d9c0; color: #355e2e; }
-    .cal-cell.transit { background: #f9f8e8; }
-    .cal-cell.transit .cal-city { background: #E6E18F; color: #5a5400; }
     .cal-cell.tainan { background: #f5f2fa; }
     .cal-cell.tainan .cal-city { background: #D5C6E0; color: #3a2060; }
     .cal-cell.taipei2 { background: #fff5fa; }
@@ -253,7 +245,6 @@
     .legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
     .legend-dot.taipei-dot { background: #ffd2c7; }
     .legend-dot.taichung-dot { background: #A9C5A0; }
-    .legend-dot.transit-dot { background: #E6E18F; }
     .legend-dot.tainan-dot { background: #D5C6E0; }
 
     .trip-link { cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
@@ -290,8 +281,6 @@
     #taipei .hotel-tag, #taipei2 .hotel-tag { background: #f5e4e0; color: #7a3060; border-color: #edddd8; }
     #taichung .hotel-notice { background: #f9fbf8; border-color: #c8dbc4; border-left-color: #b8cfb3; }
     #taichung .hotel-tag { background: #deeadb; color: #2d5028; border-color: #c8dbc4; }
-    #chiayi .hotel-notice { background: #fefefc; border-color: #dddaa8; border-left-color: #d0cc90; }
-    #chiayi .hotel-tag { background: #eceabc; color: #5a5400; border-color: #dddaa8; }
     #tainan .hotel-notice { background: #fdfcfe; border-color: #ddd4e8; border-left-color: #cbbedd; }
     #tainan .hotel-tag { background: #ebe4f2; color: #3a2060; border-color: #ddd4e8; }
     .flight-notice { background: #0f172a; color: white; border-radius: 12px; padding: 14px 18px; font-size: 0.8rem; margin-bottom: 12px; }
@@ -383,6 +372,10 @@
     .partial-group .timeline-item.highlight .timeline-time { background: #f0fdf9; color: #0f766e; }
     .timeline-text { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
     .timeline-note { font-size: 0.8rem; color: var(--gray); margin-top: 4px; line-height: 1.5; }
+    .timeline-sub { font-size: 0.82rem; font-weight: 600; color: var(--dark); margin-top: 2px; }
+    .timeline-item-alt { position: relative; padding-bottom: 20px; margin-top: -12px; }
+    .timeline-item-alt::before { content: ""; position: absolute; left: -25px; top: 7px; width: 8px; height: 8px; border-radius: 50%; background: white; border: 2px solid #e2e8f0; z-index: 1; }
+    .or-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; color: #94a3b8; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 1px 7px; border-radius: 20px; margin-right: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
 
     /* CITY-SPECIFIC TIMELINE DOT COLORS */
     #taipei .timeline-item::before, #taipei2 .timeline-item::before { border-color: #ffd2c7; }
@@ -394,11 +387,6 @@
     #taichung .timeline-item.highlight::before { background: #4aab40; border-color: #4aab40; box-shadow: 0 0 0 4px rgba(74,171,64,0.15); }
     #taichung .timeline-item.highlight .timeline-time { background: #eaf7e8; color: #2d7828; }
     #taichung .timeline::before { background: linear-gradient(to bottom, #A9C5A0, transparent); }
-
-    #chiayi .timeline-item::before { border-color: #c8c360; }
-    #chiayi .timeline-item.highlight::before { background: #b3ac10; border-color: #b3ac10; box-shadow: 0 0 0 4px rgba(179,172,16,0.15); }
-    #chiayi .timeline-item.highlight .timeline-time { background: #fafbe8; color: #8a8500; }
-    #chiayi .timeline::before { background: linear-gradient(to bottom, #E6E18F, transparent); }
 
     #tainan .timeline-item::before { border-color: #D5C6E0; }
     #tainan .timeline-item.highlight::before { background: #7c4ec8; border-color: #7c4ec8; box-shadow: 0 0 0 4px rgba(124,78,200,0.15); }
@@ -466,7 +454,112 @@
       .tips-grid { grid-template-columns: 1fr; }
       .city-nav a { padding: 14px 14px; font-size: 0.8rem; }
     }
+
+    /* ── TAINAN FOOD POLL v2 ── */
+    .food-poll { background: white; border-radius: 16px; border: 1.5px solid #e8e0f0; padding: 24px; margin-bottom: 24px; }
+    .food-poll-title { font-family: 'DM Sans', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+    .food-poll-title span { color: #7c4ec8; }
+    .food-poll-sub { font-size: 0.8rem; color: var(--gray); margin-bottom: 16px; }
+    .fp-names-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); font-weight: 600; margin-bottom: 8px; }
+    .fp-names { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .fp-name-btn { background: #f3f0f8; border: 1.5px solid transparent; border-radius: 20px; padding: 6px 14px; font-size: 0.82rem; font-weight: 500; color: #5a4070; cursor: pointer; transition: all 0.18s; white-space: nowrap; position: relative; -webkit-tap-highlight-color: transparent; }
+    .fp-name-btn:hover { background: #ede8f5; }
+    .fp-name-btn.fp-active { background: #7c4ec8; color: white; border-color: #7c4ec8; }
+    .fp-edit-icon { font-size: 0.65rem; opacity: 0; position: absolute; top: -7px; right: -5px; background: #5a4070; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border: none; padding: 0; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; transition: opacity 0.15s; }
+    .fp-name-btn:hover .fp-edit-icon, .fp-name-btn.fp-active .fp-edit-icon { opacity: 1; }
+    /* filter bar */
+    .fp-filter-bar { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-bottom: 14px; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
+    .fp-filter-bar::-webkit-scrollbar { display: none; }
+    .fp-filter { background: #f3f4f6; border: none; border-radius: 16px; padding: 5px 12px; font-size: 0.78rem; font-weight: 500; color: var(--gray); cursor: pointer; white-space: nowrap; transition: all 0.18s; -webkit-tap-highlight-color: transparent; }
+    .fp-filter:hover { background: #ede8f5; color: #5a4070; }
+    .fp-filter.fp-active { background: #7c4ec8; color: white; }
+    /* category grid */
+    .fp-cat-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+    @media (min-width: 560px) { .fp-cat-list { grid-template-columns: repeat(4, 1fr); } }
+    .fp-cat-card { background: #faf8fd; border: 1.5px solid #e8e0f0; border-radius: 12px; overflow: hidden; transition: border-color 0.18s, background 0.18s; display: flex; flex-direction: column; position: relative; }
+    .fp-cat-card.fp-voted { border-color: #9b71e0; background: #f0eafa; }
+    .fp-cat-card.fp-voted::after { content: '✓'; position: absolute; top: 8px; right: 10px; font-size: 0.75rem; color: #7c4ec8; font-weight: 700; }
+    .fp-cat-card.fp-hidden { display: none; }
+    .fp-cat-body { padding: 14px 12px 10px; flex: 1; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .fp-cat-body:hover { background: rgba(124,78,200,0.04); }
+    .fp-cat-emoji-lg { font-size: 1.6rem; margin-bottom: 7px; display: block; }
+    .fp-cat-name { font-size: 0.83rem; font-weight: 600; line-height: 1.2; margin-bottom: 2px; }
+    .fp-cat-zh { font-size: 0.7rem; color: var(--gray); margin-bottom: 6px; }
+    .fp-meal-tag { font-size: 0.63rem; background: #ede8f5; color: #5a4070; padding: 1px 6px; border-radius: 7px; font-weight: 500; display: inline-block; }
+    .fp-cat-footer { padding: 0 10px 10px; display: flex; flex-direction: column; gap: 5px; }
+    .fp-count-badge { font-size: 0.65rem; color: #7c4ec8; font-weight: 600; }
+    .fp-vote-btn { border: 1.5px solid #c4a8e8; background: white; color: #7c4ec8; border-radius: 8px; padding: 6px 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.18s; -webkit-tap-highlight-color: transparent; text-align: center; }
+    .fp-vote-btn:hover { background: #f0eafa; }
+    .fp-vote-btn.fp-voted-btn { background: #7c4ec8; color: white; border-color: #7c4ec8; }
+    .fp-expand-btn { background: none; border: none; font-size: 0.68rem; color: var(--gray); cursor: pointer; padding: 0; text-align: left; -webkit-tap-highlight-color: transparent; }
+    .fp-expand-btn:hover { color: #7c4ec8; }
+    .fp-cat-card.fp-open .fp-expand-btn { color: #7c4ec8; }
+    /* shop list */
+    .fp-shops { display: none; border-top: 1px solid #ede8f5; padding: 8px 13px; }
+    .fp-cat-card.fp-open .fp-shops { display: block; }
+    .fp-shop-item { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px solid #f0ecf8; }
+    .fp-shop-item:last-child { border-bottom: none; }
+    .fp-shop-name-wrap { flex: 1; min-width: 0; }
+    .fp-shop-name { font-size: 0.8rem; font-weight: 500; }
+    .fp-shop-tip { font-size: 0.7rem; color: #7c4ec8; margin-top: 1px; }
+    .fp-maps-link { font-size: 0.7rem; background: #f0eafa; color: #6038b0; border-radius: 6px; padding: 3px 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s; }
+    .fp-maps-link:hover { background: #e0d8f8; }
+    /* add dish */
+    .fp-add-btn { background: white; border: 1.5px dashed #c4a8e8; border-radius: 10px; padding: 9px; font-size: 0.82rem; color: #7c4ec8; cursor: pointer; width: 100%; text-align: center; font-weight: 500; transition: background 0.15s; margin-bottom: 16px; -webkit-tap-highlight-color: transparent; }
+    .fp-add-btn:hover { background: #f5f0fc; }
+    /* footer */
+    .fp-footer { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .fp-copy-btn { background: #7c4ec8; color: white; border: none; border-radius: 10px; padding: 10px 18px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: background 0.15s; flex: 1; min-width: 120px; -webkit-tap-highlight-color: transparent; }
+    .fp-copy-btn:hover { background: #6a3db0; }
+    .fp-copy-btn:active { background: #5a30a0; }
+    .fp-tally-btn { background: white; color: #7c4ec8; border: 1.5px solid #c4a8e8; border-radius: 10px; padding: 10px 14px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.15s; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+    .fp-tally-btn:hover { background: #f5f0fc; }
+    /* tally */
+    .fp-tally { margin-bottom: 14px; display: none; }
+    .fp-tally.fp-open { display: block; }
+    .fp-tally-heading { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); font-weight: 600; margin-bottom: 10px; }
+    .fp-tally-row { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+    .fp-tally-emoji { font-size: 0.9rem; flex-shrink: 0; }
+    .fp-tally-label { font-size: 0.78rem; font-weight: 500; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .fp-tally-bar-bg { width: 64px; background: #ede8f5; border-radius: 4px; height: 5px; flex-shrink: 0; }
+    .fp-tally-bar { height: 5px; background: #7c4ec8; border-radius: 4px; transition: width 0.4s; }
+    .fp-tally-num { font-size: 0.72rem; color: var(--gray); width: 22px; text-align: right; flex-shrink: 0; }
+    .fp-voter-row { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 7px; padding-left: 22px; }
+    .fp-voter-chip { font-size: 0.63rem; background: #ede8f5; color: #5a4070; padding: 2px 7px; border-radius: 8px; font-weight: 500; }
+    .fp-no-votes { font-size: 0.82rem; color: var(--gray); padding: 6px 0; }
+    /* ── meal planner ── */
+    .fp-planner { border-top: 1.5px solid #ede8f5; padding-top: 18px; margin-top: 4px; }
+    .fp-planner-title { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 3px; }
+    .fp-planner-sub { font-size: 0.78rem; color: var(--gray); margin-bottom: 12px; }
+    .fp-pool-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray); font-weight: 600; margin-bottom: 7px; }
+    .fp-pool { display: flex; gap: 7px; flex-wrap: wrap; min-height: 42px; background: #faf8fd; border: 1.5px dashed #e0d8f0; border-radius: 10px; padding: 9px; margin-bottom: 14px; align-items: flex-start; align-content: flex-start; }
+    .fp-pool-empty { font-size: 0.78rem; color: #c0a8d8; }
+    .fp-chip { display: inline-flex; align-items: center; gap: 4px; background: white; border: 1.5px solid #c4a8e8; border-radius: 20px; padding: 4px 10px 4px 7px; font-size: 0.76rem; font-weight: 500; color: #3a2060; cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; transition: box-shadow 0.15s, background 0.15s; }
+    .fp-chip:hover { background: #f5f0fc; box-shadow: 0 2px 6px rgba(124,78,200,0.15); }
+    .fp-chip.fp-selected { background: #7c4ec8; color: white; border-color: #7c4ec8; }
+    .fp-chip-emoji { font-size: 0.95rem; }
+    .fp-chip-votes { background: rgba(124,78,200,0.1); color: #7c4ec8; border-radius: 8px; font-size: 0.62rem; font-weight: 700; padding: 1px 5px; margin-left: 3px; }
+    .fp-chip.fp-selected .fp-chip-votes { background: rgba(255,255,255,0.2); color: white; }
+    .fp-plan-grid { display: grid; grid-template-columns: 52px 1fr 1fr 1fr; gap: 4px; }
+    .fp-plan-day-hdr { background: #f5f0fc; border-radius: 8px; padding: 7px 5px; text-align: center; font-size: 0.7rem; font-weight: 700; color: #3a2060; }
+    .fp-plan-day-hdr.blank { background: transparent; }
+    .fp-plan-meal-lbl { background: #f3f4f6; border-radius: 8px; padding: 6px 4px; font-size: 0.66rem; font-weight: 600; color: var(--gray); display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.3; }
+    .fp-drop-zone { background: #faf8fd; border: 1.5px dashed #ddd4ee; border-radius: 9px; min-height: 58px; padding: 5px; display: flex; flex-direction: column; gap: 3px; transition: background 0.15s, border-color 0.15s; cursor: pointer; }
+    .fp-drop-zone.fp-over { background: #f0eafa; border-color: #9b71e0; border-style: solid; }
+    .fp-drop-zone.fp-ready { border-color: #9b71e0; border-style: dashed; }
+    .fp-slot-chip { display: flex; align-items: center; gap: 3px; background: #ede8f5; border-radius: 10px; padding: 4px 7px; font-size: 0.68rem; font-weight: 500; color: #3a2060; position: relative; }
+    .fp-slot-chip-e { font-size: 0.85rem; }
+    .fp-slot-rm { position: absolute; top: -6px; right: -6px; background: #999; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; cursor: pointer; border: none; padding: 0; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    .fp-slot-rm:hover { background: var(--red); }
+    .fp-zone-hint { font-size: 0.65rem; color: #c0a8d8; padding: 3px 2px; }
+    /* iOS: eliminate 300ms tap delay on all interactive poll elements */
+    .fp-name-btn, .fp-filter, .fp-cat-body, .fp-vote-btn, .fp-expand-btn,
+    .fp-copy-btn, .fp-tally-btn, .fp-add-btn, .fp-chip, .fp-drop-zone { touch-action: manipulation; }
+    .fp-nudge { outline: 2px solid #7c4ec8; border-radius: 12px; }
   </style>
+  <!-- Firebase (shared voting across all devices) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -488,7 +581,6 @@
     <a href="#flights">Flights</a>
     <a href="#taipei">Taipei</a>
     <a href="#taichung">Taichung</a>
-    <a href="#chiayi">Chiayi</a>
     <a href="#tainan">Tainan</a>
     <a href="#taipei2">Back to Taipei</a>
     <a href="#tips">Tips</a>
@@ -507,7 +599,7 @@
     <div class="overview-card">
       <div class="icon">🌆</div>
       <div class="label">Cities</div>
-      <div class="value">4 Cities</div>
+      <div class="value">3 Cities</div>
     </div>
     <div class="overview-card">
       <div class="icon">🌤</div>
@@ -584,10 +676,10 @@
         <span class="cal-city">Taichung</span>
         <span class="cal-city secondary">Day trip: Lukang</span>
       </div>
-      <div class="cal-cell transit trip-link" onclick="document.getElementById('chiayi').scrollIntoView({behavior:'smooth'})">
+      <div class="cal-cell taichung trip-link" onclick="document.getElementById('taichung').scrollIntoView({behavior:'smooth'})">
         <span class="cal-num">28</span>
-        <span class="cal-city">Chiayi →</span>
-        <span class="cal-city">Tainan</span>
+        <span class="cal-city">Taichung</span>
+        <span class="cal-city secondary">→ Tainan</span>
       </div>
       <div class="cal-cell tainan trip-link" onclick="document.getElementById('tainan').scrollIntoView({behavior:'smooth'})">
         <span class="cal-num">29</span>
@@ -597,9 +689,9 @@
         <span class="cal-num">30</span>
         <span class="cal-city">Tainan</span>
       </div>
-      <div class="cal-cell tainan other-month trip-link" onclick="document.getElementById('tainan').scrollIntoView({behavior:'smooth'})">
+      <div class="cal-cell taipei2 other-month trip-link" onclick="document.getElementById('taipei2').scrollIntoView({behavior:'smooth'})">
         <span class="cal-num">May 1</span>
-        <span class="cal-city">Tainan</span>
+        <span class="cal-city">↩ Taipei</span>
       </div>
       <div class="cal-cell taipei2 other-month trip-link" onclick="document.getElementById('taipei2').scrollIntoView({behavior:'smooth'})">
         <span class="cal-num">May 2</span>
@@ -620,10 +712,9 @@
     </div>
 
     <div class="cal-legend">
-      <div class="legend-item"><span class="legend-dot taipei-dot"></span>Taipei (Apr 24–25, May 2–3)</div>
-      <div class="legend-item"><span class="legend-dot taichung-dot"></span>Taichung (Apr 26–27) — Lukang day trip Apr 27</div>
-      <div class="legend-item"><span class="legend-dot transit-dot"></span>Chiayi transit (Apr 28)</div>
-      <div class="legend-item"><span class="legend-dot tainan-dot"></span>Tainan (Apr 28–May 1)</div>
+      <div class="legend-item"><span class="legend-dot taipei-dot"></span>Taipei (Apr 24–25, May 1–3)</div>
+      <div class="legend-item"><span class="legend-dot taichung-dot"></span>Taichung (Apr 26–28) — Lukang day trip Apr 27</div>
+      <div class="legend-item"><span class="legend-dot tainan-dot"></span>Tainan (Apr 28 – May 1)</div>
     </div>
   </section>
 
@@ -775,14 +866,14 @@
               <div class="timeline-note">EVA Air arrives — grab your SIM card or WiFi router at the airport</div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">18:00 – 18:45</div>
+              <div class="timeline-time">18:00 – 19:00</div>
               <div class="timeline-text">🛂 Clear customs & collect luggage</div>
-              <div class="timeline-note">Allow ~30–45 min</div>
+              <div class="timeline-note">Allow ~50 min–1 hr</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">~18:45</div>
-              <div class="timeline-text">🚗 Uber → Grand Hyatt Taipei</div>
-              <div class="timeline-note">~45–60 min depending on traffic · ~NT$1,200–1,500 for the group · direct to the hotel door</div>
+              <div class="timeline-text">🚗 Driver → Grand Hyatt Taipei</div>
+              <div class="timeline-note">Driver booked · ~45–60 min depending on traffic · direct to the hotel door</div>
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">~19:45</div>
@@ -790,14 +881,9 @@
               <div class="timeline-note">2 Songshou Rd, Xinyi. Drop bags, freshen up — you made it! The hotel is right next to Taipei 101</div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">~21:00</div>
-              <div class="timeline-text">🌶️ First meal — Mala hotpot</div>
-              <div class="timeline-note">Options: Orange Hotpot (橘色涮涮鍋) · 牛肆 beef hotpot · 詹記麻辣火鍋 — all famous Taipei spots, book ahead!</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">~22:30</div>
-              <div class="timeline-text">🚶 Evening stroll — Ximending or Zhongshan</div>
-              <div class="timeline-note">Both are lively at night. Or rest up for the full day tomorrow!</div>
+              <div class="timeline-time">21:30</div>
+              <div class="timeline-text">🎤 Sing!go KTV — dinner + karaoke</div>
+              <div class="timeline-note">~4 hours of KTV fun. Out around 01:30</div>
             </div>
           </div>
         </details>
@@ -806,34 +892,62 @@
           <summary><span class="day-badge">Apr 25</span><span class="day-plan-title">Full Day Taipei — Cafes, streets & KTV night</span><span class="day-chevron">▸</span></summary>
           <div class="timeline">
             <div class="timeline-item highlight">
-              <div class="timeline-time">09:00</div>
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-text">🥞 Breakfast — 瑞麟美而美 or 威美早餐店</div>
+              <div class="timeline-note"><strong>瑞麟美而美</strong>: classic Taiwanese breakfast shop — egg crepes, soy milk & toast · 17 Fu Yang Street · <a href="https://www.google.com/maps/search/瑞麟美而美+17+撫遠街+台北" target="_blank">📍 Maps</a> · <strong>威美早餐店</strong>: neighbourhood breakfast staple with fresh-made sandwiches & warm soy milk · <a href="https://www.google.com/maps/search/威美早餐店+台北" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">11:00</div>
               <div class="timeline-text">🏛 Dihua Street (迪化街)</div>
-              <div class="timeline-note">Best visited in the morning before it gets busy. Browse fabric shops, dried goods and the indie boutiques</div>
+              <div class="timeline-note">Browse fabric shops, dried goods and indie boutiques</div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">10:30</div>
-              <div class="timeline-text">☕ Cafe hop — Zhongshan North Road area</div>
-              <div class="timeline-note">Fika Fika or Simple Kaffa for world-class coffee. Beautiful tree-lined streets to stroll</div>
+            <div class="timeline-item">
+              <div class="timeline-time">11:30</div>
+              <div class="timeline-text">☕ Cafe</div>
+              <div class="timeline-sub">裡ura.219</div>
+              <div class="timeline-note">Charming hidden cafe in 大稻埕 · <a href="https://www.google.com/maps/search/裡ura.219+大稻埕+台北" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item-alt">
+              <div class="timeline-text"><span class="or-badge">or</span></div>
+              <div class="timeline-sub">美好時光大稻埕</div>
+              <div class="timeline-note">Vintage-style cafe with great atmosphere · <a href="https://www.google.com/maps/search/美好時光+大稻埕+台北" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">14:30</div>
-              <div class="timeline-text">🛍 Dongmen & Yongkang Street — indie boutiques & cafes</div>
-              <div class="timeline-note">Stroll Yongkang St and browse the indie shops</div>
+              <div class="timeline-time">12:00</div>
+              <div class="timeline-text">🛕 霞海城隍廟</div>
+              <div class="timeline-note">Famous temple in 大稻埕 known for the matchmaker god (月下老人) · quick visit before lunch · <a href="https://www.google.com/maps/search/霞海城隍廟+大稻埕+台北" target="_blank">📍 Google Maps</a></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:30</div>
+              <div class="timeline-text">🍚 Lunch — <strong>大稻埕滷肉飯</strong></div>
+              <div class="timeline-note">Classic braised pork rice, a beloved Taiwanese staple — tender slow-braised pork belly over steamed white rice · <a href="https://www.google.com/maps/search/大稻埕滷肉飯+台北" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item-alt">
+            <div class="timeline-item-alt">
+              <div class="timeline-text"><span class="or-badge">or</span></div>
+              <div class="timeline-sub">慈聖宮廟口小吃</div>
+            </div>
+              <div class="timeline-note">Outdoor temple food stalls next to Cisheng Temple — vendors serving everything from oyster vermicelli to braised dishes, great for a group · <a href="https://www.google.com/maps/search/慈聖宮廟口小吃+大稻埕+台北" target="_blank">📍 Maps</a></div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-text">💎 Shoppers — pick one mall</div>
+              <div class="timeline-note">Taipei 101 (Louis Vuitton, Gucci, Tiffany &amp; Co) · A11 (mid-luxury &amp; local designers) · SOGO (beauty, fashion &amp; food hall)</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-text">🍫 Non-shoppers — <strong>土然巧克力</strong></div>
+              <div class="timeline-note">Artisan bean-to-bar chocolate, beautifully packaged, perfect as gifts · <a href="https://www.google.com/maps/search/土然巧克力+台北" target="_blank">📍 Google Maps</a></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">17:00</div>
+              <div class="timeline-text">☕ Cafe — Congrats Coffee</div>
+              <div class="timeline-note">Cute, aesthetically pleasing cafe · great for a post-shopping break · <a href="https://www.google.com/maps/search/Congrats+Coffee+台北" target="_blank">📍 Google Maps</a></div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">16:30</div>
-              <div class="timeline-text">💎 Luxury shopping — Taipei 101 Mall & A11</div>
-              <div class="timeline-note">Taipei 101 Mall has Louis Vuitton, Gucci, Tiffany & Co and more. A11 next door has great mid-luxury and local designer brands. Both are a short walk from Grand Hyatt</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">18:30</div>
-              <div class="timeline-text">🍜 Dinner — Lin Dong Fang Beef Noodles (林東芳牛肉麵)</div>
-              <div class="timeline-note">274 Ba De Rd Sec 2, Zhongshan District · One of Taipei's most iconic beef noodle spots · Long queues but worth it — arrive early</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">20:30</div>
-              <div class="timeline-text">🎤 KTV night out!</div>
-              <div class="timeline-note">Holiday KTV (好樂迪) or Cashbox (錢櫃) — book a room for the group</div>
+              <div class="timeline-time">19:00</div>
+              <div class="timeline-text">🍲 Dinner — 如膠花膠雞 (仁愛店)</div>
+              <div class="timeline-note">如膠花膠雞 · 仁愛店 · Specialises in fish maw &amp; chicken hot pot — rich collagen broth slow-cooked with premium fish maw (花膠), known for its silky texture and skin-nourishing properties · <a href="https://www.google.com/maps/search/如膠花膠雞+仁愛店+台北" target="_blank">📍 Google Maps</a></div>
             </div>
           </div>
         </details>
@@ -872,7 +986,7 @@
           <button class="rec-tab">☕ Cafes</button>
           <button class="rec-tab">🛍 Shopping</button>
           <button class="rec-tab">🍜 Food</button>
-          <button class="rec-tab">🎤 KTV</button>
+          <button class="rec-tab">🥾 Trails</button>
         </div>
         <div class="rec-panels">
 
@@ -1044,31 +1158,23 @@
             </div>
           </div>
 
-          <!-- KTV -->
+        </div>
+
+          <!-- Trails -->
           <div class="rec-panel">
             <div class="rec-item" onclick="this.classList.toggle('open')">
               <div class="rec-item-header">
                 <div class="rec-item-header-left">
-                  <div class="rec-item-name">Holiday KTV (好樂迪)</div>
-                  <div class="rec-item-sub">Popular local chain, great value</div>
+                  <div class="rec-item-name">Elephant Mountain (象山)</div>
+                  <div class="rec-item-sub">Best views of Taipei 101 · 30–40 min hike</div>
+                  <div class="rec-item-badges"><span class="rec-badge must">must</span></div>
                 </div>
                 <span class="rec-arrow">›</span>
               </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Multiple locations (Zhongxiao, Ximending, Shilin)<br><strong>⏰</strong> Open until late / 24hr some locations<br><br>Most popular Taiwanese KTV chain. Huge song library incl. English, Mandarin & Japanese. Affordable hourly packages with free snacks.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Holiday+KTV+Taipei" target="_blank">📍 Maps</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Cashbox KTV (錢櫃)</div>
-                  <div class="rec-item-sub">Premium option, more central</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Flagship near Taipei Main Station area<br><br>Slightly more upscale than Holiday. Good buffet spread. Great for a big group night out.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Cashbox+KTV+Taipei" target="_blank">📍 Maps</a></div></div>
+              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Xiangshan MRT (exit 2), Xinyi District<br><strong>⏰</strong> Open daily, best at sunrise or golden hour<br><br>Short but rewarding hike up rocky steps with stunning views of Taipei 101 and the city skyline. About 20 min from Grand Hyatt.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Elephant+Mountain+Taipei+象山" target="_blank">📍 Maps</a></div></div>
             </div>
           </div>
 
-        </div>
       </div>
     </div>
   </section>
@@ -1080,7 +1186,7 @@
         <h2>Taichung <span class="city-zh">台中</span></h2>
         <p>Taiwan's coolest city — great food, cafes & night markets, with a Lukang day trip</p>
       </div>
-      <div class="city-dates">Apr 26 – 27</div>
+      <div class="city-dates">Apr 26 – 28</div>
       <span class="city-chevron">▾</span>
     </button>
     <div class="city-body">
@@ -1114,14 +1220,14 @@
           <summary><span class="day-badge">Apr 26</span><span class="day-plan-title">Taipei → Taichung — afternoon arrival & city exploring</span><span class="day-chevron">▸</span></summary>
           <div class="timeline">
             <div class="timeline-item">
-              <div class="timeline-time">09:00 – 12:00</div>
-              <div class="timeline-text">🌅 Relaxed morning in Taipei</div>
-              <div class="timeline-note">Pack up, grab brunch, final coffee stop before heading south</div>
-            </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">~13:00</div>
-              <div class="timeline-text">🚄 HSR Taipei → Taichung (~55min)</div>
-              <div class="timeline-note">Book tickets in advance at thsrc.com.tw. Arrive ~14:00–14:30</div>
+              <div class="timeline-time">09:00</div>
+              <div class="timeline-text">🥛 Breakfast — 家香豆漿店</div>
+              <div class="timeline-note">家香豆漿店 · <a href="https://www.google.com/maps/search/家香豆漿店+台北" target="_blank">📍 Google Maps</a></div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">15:31</div>
+              <div class="timeline-text">🚄 高鐵 Taipei → Taichung (~47min)</div>
+              <div class="timeline-note">Arrive Taichung 16:18 · Book tickets at thsrc.com.tw</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">16:30</div>
@@ -1140,8 +1246,8 @@
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">20:00</div>
-              <div class="timeline-text">🍽 Dinner — 台中 熱炒 (Taiwanese stir-fry)</div>
-              <div class="timeline-note">Lively open-kitchen stir-fry restaurants are a classic Taiwan group dinner — order dishes to share. Many options near the city center and Fengjia area</div>
+              <div class="timeline-text">🍵 Dinner — 春水堂</div>
+              <div class="timeline-note">春水堂 · <a href="https://www.google.com/maps/search/春水堂+台中" target="_blank">📍 Google Maps</a></div>
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">21:30</div>
@@ -1195,13 +1301,49 @@
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">19:00</div>
-              <div class="timeline-text">🍽 Dinner — 三杯雞 & 炒飯 (three cup chicken & fried rice)</div>
-              <div class="timeline-note">Classic Taiwanese home-style shared meal — great for a group. Try 台中 合菜 (family-style Taiwanese dishes) at a local restaurant near the city center</div>
+              <div class="timeline-text">🥩 Dinner — 茶六燒肉堂 (Cha Liu Yakiniku)</div>
+              <div class="timeline-note">One of Taichung's most popular yakiniku spots — premium cuts, great group vibe. Book ahead · <a href="https://www.google.com/maps/search/茶六燒肉堂+台中" target="_blank">📍 Google Maps</a></div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">20:30</div>
               <div class="timeline-text">🌈 Rainbow Village (彩虹眷村) evening visit</div>
               <div class="timeline-note">56 Chun'an Rd, Nantun · Colourful mural village, very photogenic · ~20min taxi from center</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="day-plan">
+          <summary><span class="day-badge">Apr 28</span><span class="day-plan-title">Travel Day — Taichung → Tainan</span><span class="day-chevron">▸</span></summary>
+          <div class="timeline">
+            <div class="timeline-item highlight">
+              <div class="timeline-time">09:30</div>
+              <div class="timeline-text">🍳 Brunch — 第二市場 (Second Market) area</div>
+              <div class="timeline-note">Taichung's oldest covered market. Hunt down 山河滷肉飯 for braised pork rice, or grab 菜頭粿 (turnip cake) and 草仔粿 (herbal mochi) from stalls inside. Great final Taichung morning bite · <a href="https://maps.app.goo.gl/8WoGZmwVfEHLHkYT9" target="_blank">📍 Google Maps</a></div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">11:45</div>
+              <div class="timeline-text">✈️ Sol & Katie land — Taoyuan Airport (TPE)</div>
+              <div class="timeline-note">TR892 Scoot arrives · Take Airport MRT → HSR → head south to meet the group in Tainan!</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-text">🚄 HSR Taichung → Tainan (~55min)</div>
+              <div class="timeline-note">Head directly south — arrive Tainan mid-afternoon. Take the free shuttle bus or taxi (~NT$300) to city center</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">~16:00</div>
+              <div class="timeline-text">🏨 Check in to 香格里拉台南 (Shangri-La Tainan)</div>
+              <div class="timeline-note">89 Zhonghua E Rd Sec 1, East District</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">19:00</div>
+              <div class="timeline-text">🏮 First Tainan evening — Shennong Street at dusk</div>
+              <div class="timeline-note">The red lanterns light up at dusk — perfect first impression of Tainan</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">20:00</div>
+              <div class="timeline-text">🍜 Dinner — 迦南水果店</div>
+              <div class="timeline-note">Instagram's hidden gem for 鍋燒意麵 (hot pot noodles) — rich broth, thick noodles, loaded with toppings · <a href="https://www.google.com/maps/search/迦南水果店+台南" target="_blank">📍 Google Maps</a></div>
             </div>
           </div>
         </details>
@@ -1455,333 +1597,6 @@
   </section>
 
 
-  <!-- CHIAYI -->
-  <section class="city-section partial-group" id="chiayi">
-    <button class="city-toggle" onclick="toggleCity(this)">
-      <div class="city-toggle-info">
-        <h2>Chiayi <span class="city-zh">嘉義</span></h2>
-        <p>Charming Japanese colonial town — quick stop for turkey rice & coffin bread</p>
-      </div>
-      <div class="city-dates">Apr 28 · Stopover</div>
-      <span class="city-chevron">▾</span>
-    </button>
-    <div class="city-body">
-      <p style="font-size:0.82rem; color:var(--gray); margin-bottom:12px;">👥 Yanni · Jason · Susan · Jo</p>
-      <details class="getting-there">
-        <summary><strong>🚄 Getting There — Taichung → Chiayi</strong><span class="gt-chevron">▸</span></summary>
-        <div class="gt-body">
-        <div class="route-steps">
-          <span class="step">🚄 HSR Taichung → Chiayi</span>
-          <span class="step-arrow">→</span>
-          <span class="step">~40min</span>
-        </div>
-        <div class="step-note">~40min · Drop bags at luggage storage near the station then explore on foot</div>
-        </div>
-      </details>
-
-      <!-- DAY PLANS: CHIAYI -->
-      <div class="day-plans-wrap">
-        <p class="day-plans-label">📅 Day by Day</p>
-        <details class="day-plan">
-          <summary><span class="day-badge">Apr 28</span><span class="day-plan-title">Chiayi Stopover — Turkey rice & on to Tainan</span><span class="day-chevron">▸</span></summary>
-          <div class="timeline">
-            <div class="timeline-item highlight">
-              <div class="timeline-time">Morning</div>
-              <div class="timeline-text">🚄 Travel Taichung → Chiayi</div>
-              <div class="timeline-note">HSR ~40min. Arrive mid-morning</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">11:45</div>
-              <div class="timeline-text">✈️ Sol & Katie land — Taoyuan Airport (TPE)</div>
-              <div class="timeline-note">TR892 Scoot arrives · Take Airport MRT → HSR → head south to meet the group!</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">11:30</div>
-              <div class="timeline-text">🍚 Turkey rice (火雞肉飯) — the whole point of stopping here</div>
-              <div class="timeline-note">Head straight to a famous turkey rice stall. You'll want two bowls. Simple, cheap, iconic</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">12:30</div>
-              <div class="timeline-text">🍞 Coffin bread (棺材板) for dessert/snack</div>
-              <div class="timeline-note">Thick toast filled with creamy seafood chowder — invented in Chiayi</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">13:30</div>
-              <div class="timeline-text">🌲 Quick visit — Hinoki Village (檜意森活村)</div>
-              <div class="timeline-note">1 Wenhua Rd. Beautiful Japanese wooden buildings with boutiques. ~1hr is enough for a quick look</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">15:00</div>
-              <div class="timeline-text">🛍 Pick up local snacks & square crackers (方塊酥)</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">16:00</div>
-              <div class="timeline-text">🚄 HSR Chiayi → Tainan (~20min)</div>
-              <div class="timeline-note">Short hop — you'll be in Tainan by late afternoon</div>
-            </div>
-            <div class="timeline-item highlight">
-              <div class="timeline-time">~17:30</div>
-              <div class="timeline-text">🏨 Check in to 香格里拉台南 (Shangri-La Tainan)</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">19:00</div>
-              <div class="timeline-text">🏮 First Tainan evening — Shennong Street at dusk</div>
-              <div class="timeline-note">The red lanterns light up at dusk — perfect first impression of Tainan</div>
-            </div>
-          </div>
-        </details>
-      </div>
-
-      <div class="photo-gallery">
-        <a class="photo-item" href="https://www.google.com/search?q=Hinoki+Village+Chiayi+Taiwan&tbm=isch" target="_blank">
-          <img src="images/chiayi/hinoki-village.jpg" alt="Hinoki Village" />
-          <div class="photo-caption">Hinoki Village (檜意森活村)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Chiayi+cold+noodle+涼麵+Taiwan&tbm=isch" target="_blank">
-          <img src="images/chiayi/cold-noodle.jpg" alt="Cold Noodle" />
-          <div class="photo-caption">Cold Noodle (涼麵)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Chiayi+City+Hall+Japan+colonial&tbm=isch" target="_blank">
-          <img src="images/chiayi/city-hall.jpg" alt="Chiayi City Hall" />
-          <div class="photo-caption">Chiayi City Hall</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Turkey+rice+Chiayi+Taiwan&tbm=isch" target="_blank">
-          <img src="images/chiayi/turkey-rice.jpg" alt="Turkey Rice" />
-          <div class="photo-caption">Turkey Rice (火雞肉飯)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-        <a class="photo-item" href="https://www.google.com/search?q=Coffin+bread+Chiayi+Taiwan&tbm=isch" target="_blank">
-          <img src="images/chiayi/coffin-bread.jpg" alt="Coffin Bread" />
-          <div class="photo-caption">Coffin Bread (棺材板)</div>
-          <div class="photo-search-hint">🔍 Search photos</div>
-        </a>
-      </div>
-      <div class="rec-section">
-        <div class="rec-tabs">
-          <button class="rec-tab active">🏛 Buildings</button>
-          <button class="rec-tab">☕ Cafes</button>
-          <button class="rec-tab">🛍 Shopping</button>
-          <button class="rec-tab">🍜 Must-Eat</button>
-        </div>
-        <div class="rec-panels">
-
-          <!-- Buildings -->
-          <div class="rec-panel active">
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Hinoki Village (檜意森活村)</div>
-                  <div class="rec-item-sub">18 restored Japanese colonial wooden houses</div>
-                  <div class="rec-item-badges"><span class="rec-badge must">must</span><span class="rec-badge free">free</span></div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> 1 Wenhua Rd, Chiayi<br><strong>⏰</strong> 9am–6pm · Free to enter<br><br>18 restored Japanese colonial wooden houses now home to boutiques, cafes and galleries. Very Instagram-worthy.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Hinoki+Village+Chiayi" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/檜意森活村/" target="_blank">📸 Instagram</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Chiayi Old Prison</div>
-                  <div class="rec-item-sub">1919 Japanese colonial prison, beautifully preserved</div>
-                  <div class="rec-item-badges"><span class="rec-badge free">free</span></div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> 140 Weixin Rd, Chiayi<br><strong>⏰</strong> 9am–5pm · Closed Mon · Free<br><br>One of the best preserved Japanese colonial prisons in Taiwan. Eerie and fascinating architecture — the star-shaped guard tower is iconic.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Chiayi+Old+Prison" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/嘉義舊監獄/" target="_blank">📸 Instagram</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Chiayi City Hall Area</div>
-                  <div class="rec-item-sub">Gorgeous Japanese-era civic buildings</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Zhongshan Rd, central Chiayi<br><br>The area around the old city hall has several well-preserved Japanese colonial buildings. Good for a stroll.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Chiayi+City+Hall" target="_blank">📍 Maps</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Wenhua Road (文化路)</div>
-                  <div class="rec-item-sub">Great street food strip in the evenings</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Wenhua Rd, Chiayi<br><strong>⏰</strong> Evenings from ~5pm<br><br>One of Chiayi's main food streets — turkey rice stalls, grilled skewers, and local desserts all along the road.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Wenhua+Road+Chiayi" target="_blank">📍 Maps</a></div></div>
-            </div>
-          </div>
-
-          <!-- Cafes -->
-          <div class="rec-panel">
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Cafes Inside Hinoki Village</div>
-                  <div class="rec-item-sub">Charming wooden house settings</div>
-                  <div class="rec-item-badges"><span class="rec-badge must">must</span></div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> 1 Wenhua Rd, Chiayi<br><strong>⏰</strong> ~10am–6pm<br><br>Multiple cafes inside the restored Japanese wooden buildings. Perfect for a slow afternoon coffee in a very pretty setting.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/cafe+Hinoki+Village+Chiayi" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/嘉義咖啡/" target="_blank">📸 Instagram</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Indie Cafes Near Old City Center</div>
-                  <div class="rec-item-sub">Old shophouses turned cafes</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Around Zhongshan Rd & Guanghua Rd, Chiayi<br><br>Chiayi has a growing indie cafe scene. Look for small shops in old shophouses near the city center.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/indie+cafe+Chiayi" target="_blank">📍 Maps</a></div></div>
-            </div>
-          </div>
-
-          <!-- Shopping -->
-          <div class="rec-panel">
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Hinoki Village Boutiques</div>
-                  <div class="rec-item-sub">Local designer goods, ceramics, clothing</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> 1 Wenhua Rd, Chiayi<br><strong>⏰</strong> 10am–6pm<br><br>Mix of local design brands, handmade ceramics, clothing and lifestyle goods. Great for unique souvenirs.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Hinoki+Village+Chiayi+shopping" target="_blank">📍 Maps</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Pineapple Cakes, Dried Mango & Plum</div>
-                  <div class="rec-item-sub">Local specialties to bring home</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Any traditional confectionery shop or supermarket in Chiayi<br><br>Chiayi is the gateway to the fruit-growing south. Stock up on dried mango and local pineapple cakes here.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/pineapple+cake+Chiayi" target="_blank">📍 Maps</a></div></div>
-            </div>
-          </div>
-
-          <!-- Must-Eat -->
-          <div class="rec-panel">
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Turkey Rice (火雞肉飯)</div>
-                  <div class="rec-item-sub">THE iconic Chiayi dish</div>
-                  <div class="rec-item-badges"><span class="rec-badge must">must</span></div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Countless stalls throughout Chiayi — ask locals for their favourite<br><br>Shredded turkey with soy-braised sauce over rice. Simple, cheap, and absolutely delicious. You'll eat multiple bowls.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/turkey+rice+Chiayi" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/火雞肉飯/" target="_blank">📸 Instagram</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Coffin Bread (棺材板)</div>
-                  <div class="rec-item-sub">Thick toast filled with creamy seafood chowder</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Wenhua Night Market area, Chiayi<br><br>Invented in Chiayi — a thick slab of toast hollowed out and filled with creamy seafood chowder. Unique and very filling.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/coffin+bread+Chiayi" target="_blank">📍 Maps</a><a class="rec-link" href="https://www.instagram.com/explore/tags/棺材板/" target="_blank">📸 Instagram</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Square Crackers (方塊酥)</div>
-                  <div class="rec-item-sub">Flaky, lightly sweet local snack</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail">Available at most bakeries and souvenir shops in Chiayi. Light, flaky, slightly sweet — addictive.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/方塊酥+嘉義" target="_blank">📍 Maps</a></div></div>
-            </div>
-            <div class="rec-item" onclick="this.classList.toggle('open')">
-              <div class="rec-item-header">
-                <div class="rec-item-header-left">
-                  <div class="rec-item-name">Wenhua Road Street Food</div>
-                  <div class="rec-item-sub">Grilled skewers, soups & Taiwanese snacks</div>
-                </div>
-                <span class="rec-arrow">›</span>
-              </div>
-              <div class="rec-item-body"><div class="rec-detail"><strong>📍</strong> Wenhua Rd, Chiayi<br><strong>⏰</strong> Evenings ~5pm onwards<br><br>Wide variety of grilled skewers, soups, and Taiwanese snacks. Good for dinner before the HSR to Tainan.</div><div class="rec-links"><a class="rec-link" href="https://www.google.com/maps/search/Wenhua+Road+Chiayi+night+market" target="_blank">📍 Maps</a></div></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- TAICHUNG ALTERNATIVE -->
-      <details class="alt-option">
-        <summary><span class="alt-badge">🔀 Alternative</span><span class="alt-title">Skip Chiayi — do Taichung instead?</span><span class="day-chevron">▸</span></summary>
-        <div class="alt-body">
-          <p style="font-size:0.83rem; color:#92400e; margin-bottom:14px;">Taichung is only ~20–30 min from Lukang by taxi — making it a natural swap for Chiayi. Great if you prefer a bigger, trendier city with famous ice cream, night markets and modern architecture.</p>
-
-          <div class="getting-there">
-            <strong>🚗 Getting There — Lukang → Taichung</strong>
-            <div class="route-steps">
-              <span class="step">🚕 Taxi Lukang → Taichung</span>
-              <span class="step-arrow">→</span>
-              <span class="step">~25–30min · ~NT$400</span>
-            </div>
-            <div class="step-note">Then HSR Taichung → Tainan ~35min to continue south</div>
-          </div>
-
-          <div class="day-plans-wrap" style="margin-top:14px;">
-            <p class="day-plans-label">📅 Suggested Day Plan</p>
-            <details class="day-plan">
-              <summary><span class="day-badge" style="background:#f59e0b;">Apr 28</span><span class="day-plan-title">Taichung Stopover — ice cream, markets & design</span><span class="day-chevron">▸</span></summary>
-              <div class="timeline">
-                <div class="timeline-item highlight">
-                  <div class="timeline-time">Morning</div>
-                  <div class="timeline-text">🚕 Arrive Taichung from Lukang</div>
-                  <div class="timeline-note">~25–30min by taxi. Drop bags at a luggage storage spot near the station</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-time">12:00</div>
-                  <div class="timeline-text">🌿 Calligraphy Greenway (草悟道)</div>
-                  <div class="timeline-note">Tree-lined boulevard with indie cafes, boutiques and the National Museum of Natural Science nearby</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-time">13:30</div>
-                  <div class="timeline-text">☕ Cafe hop — Taichung has an excellent cafe scene</div>
-                  <div class="timeline-note">Lots of aesthetic cafes around the Luchuan W St area and Zhongshan Rd</div>
-                </div>
-                <div class="timeline-item highlight">
-                  <div class="timeline-time">15:00</div>
-                  <div class="timeline-text">🌈 Rainbow Village (彩虹眷村)</div>
-                  <div class="timeline-note">A tiny village entirely covered in colourful folk art murals. Very photogenic, ~20min by taxi from city center</div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-time">17:00</div>
-                  <div class="timeline-text">🛍 Fengjia Night Market area (逢甲夜市)</div>
-                  <div class="timeline-note">One of Taiwan's largest night markets. Great for early dinner before heading to Tainan</div>
-                </div>
-                <div class="timeline-item highlight">
-                  <div class="timeline-time">19:00</div>
-                  <div class="timeline-text">🚄 HSR Taichung → Tainan (~35min)</div>
-                  <div class="timeline-note">Arrive Tainan evening — take shuttle to city center</div>
-                </div>
-              </div>
-            </details>
-          </div>
-
-          <div class="cards-grid" style="margin-top:16px;">
-            <div class="card">
-              <div class="card-header"><span class="card-icon">⭐</span><h3>Taichung Highlights</h3></div>
-              <details><summary><span>Rainbow Village (彩虹眷村) — colourful mural village</span></summary><div class="card-item-body"><p>📍 56 Chun'an Rd, Nantun District · Free · ⏰ Open daily</p><p>An 80-year-old veteran painted every surface of this tiny village to save it from demolition. Very photogenic.</p></div></details>
-              <details><summary><span>Calligraphy Greenway (草悟道) — trendy boulevard</span></summary><div class="card-item-body"><p>📍 Yingcai Rd area, West District</p><p>1.6km green corridor lined with cafes, bookshops and boutiques. Great for a stroll.</p></div></details>
-              <details><summary><span>Fengjia Night Market (逢甲夜市) — one of Taiwan's biggest</span></summary><div class="card-item-body"><p>📍 Wenhua Rd, Xitun District · ⏰ 4pm–1am</p><p>Enormous night market near Feng Chia University. Great variety of street food and shopping.</p></div></details>
-              <details><summary><span>National Taichung Theater — stunning modern architecture</span></summary><div class="card-item-body"><p>📍 101 Huilai Rd Sec 2, Xitun District</p><p>Designed by Toyo Ito — one of the most architecturally striking buildings in Taiwan. Worth seeing even from outside.</p></div></details>
-            </div>
-          </div>
-
-        </div>
-      </details>
-
-    </div>
-  </section>
-
   <!-- TAINAN -->
   <section class="city-section" id="tainan">
     <button class="city-toggle" onclick="toggleCity(this)">
@@ -1804,18 +1619,18 @@
       </a>
 
       <details class="getting-there">
-        <summary><strong>🚄 Getting There — Taichung → Chiayi → Tainan</strong><span class="gt-chevron">▸</span></summary>
+        <summary><strong>🚄 Getting There — Taichung → Tainan</strong><span class="gt-chevron">▸</span></summary>
         <div class="gt-body">
         <div class="route-steps">
-          <span class="step">🚄 HSR Chiayi → Tainan</span>
+          <span class="step">🚄 HSR Taichung → Tainan</span>
           <span class="step-arrow">→</span>
-          <span class="step">~20min</span>
+          <span class="step">~55min</span>
           <span class="step-arrow">→</span>
           <span class="step">🚌 Shuttle to city center</span>
           <span class="step-arrow">→</span>
           <span class="step">~30min</span>
         </div>
-        <div class="step-note">Total ~1hr · HSR Tainan Station is outside the city — take the free shuttle bus or taxi (~NT$300) to the center</div>
+        <div class="step-note">Total ~1.5hr · HSR Tainan Station is outside the city — take the free shuttle bus or taxi (~NT$300) to the center</div>
         </div>
       </details>
 
@@ -1824,37 +1639,73 @@
         <p class="day-plans-label">📅 Day by Day</p>
 
         <details class="day-plan">
-          <summary><span class="day-badge">Apr 29</span><span class="day-plan-title">Day 1 Tainan — Beef soup breakfast & old streets</span><span class="day-chevron">▸</span></summary>
+          <summary><span class="day-badge">Apr 28</span><span class="day-plan-title">Arrival Evening — first taste of Tainan</span><span class="day-chevron">▸</span></summary>
+          <div class="timeline">
+            <div class="timeline-item highlight">
+              <div class="timeline-time">~16:00</div>
+              <div class="timeline-text">🏨 Check in to 香格里拉台南 (Shangri-La Tainan)</div>
+              <div class="timeline-note">89 Zhonghua E Rd Sec 1, East District · Drop bags, freshen up</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">19:00</div>
+              <div class="timeline-text">🏮 Shennong Street at dusk</div>
+              <div class="timeline-note">Red lanterns light up at dusk — the perfect first impression of Tainan. Short stroll before dinner</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">20:00</div>
+              <div class="timeline-text">🍜 Dinner — 迦南水果店</div>
+              <div class="timeline-note">Instagram's hidden gem for 鍋燒意麵 (hot pot noodles) — rich broth, thick noodles, loaded with toppings · <a href="https://www.google.com/maps/search/迦南水果店+台南" target="_blank">📍 Google Maps</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="day-plan">
+          <summary><span class="day-badge">Apr 29</span><span class="day-plan-title">Day 1 Tainan — Old city, street food & lantern streets</span><span class="day-chevron">▸</span></summary>
           <div class="timeline">
             <div class="timeline-item highlight">
               <div class="timeline-time">07:00</div>
               <div class="timeline-text">🥣 Tainan beef soup breakfast (台南牛肉湯)</div>
               <div class="timeline-note">Sold out by 10am — this is a must. Thin-sliced fresh beef in clear broth. A Tainan morning ritual</div>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item highlight">
               <div class="timeline-time">09:00</div>
-              <div class="timeline-text">🏯 Hayashi Department Store (林百貨)</div>
-              <div class="timeline-note">Opens 11am — stroll the area first, explore the restored 1932 building when it opens</div>
+              <div class="timeline-text">🏯 赤崁樓 (Chihkan Tower)</div>
+              <div class="timeline-note">212 Minzu Rd Sec 2 · One of Tainan's most iconic landmarks — Dutch colonial fort turned temple. Stunning tiered architecture · <a href="https://maps.app.goo.gl/Fx9MK6GXm8B5pK5b8" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-text">🎓 孔廟 (Confucius Temple)</div>
+              <div class="timeline-note">2 Nanmen Rd · Taiwan's oldest Confucius Temple, built 1665. Beautiful red walls and ancient banyan trees · <a href="https://maps.app.goo.gl/NvVaUGdUQ2DkfWNy5" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">12:00</div>
-              <div class="timeline-text">🍜 Lunch — Dan Zai Noodles (擔仔麵)</div>
-              <div class="timeline-note">度小月 (Du Xiao Yue) at 101 Zhongzheng Rd is the original. Small bowl, big flavour</div>
+              <div class="timeline-time">11:30</div>
+              <div class="timeline-text">🍢 國華街美食區 (Guohua Street Food)</div>
+              <div class="timeline-note">The best food street in Tainan — graze from stall to stall: oyster omelette, coffin bread, danzai noodles, shrimp roll. Budget ~NT$300–400 per person · <a href="https://maps.app.goo.gl/TFxTWtT3hiFmFGMm7" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">14:00</div>
-              <div class="timeline-text">🏮 Shennong Street (神農街) afternoon</div>
-              <div class="timeline-note">Pop into indie cafes and art galleries. Great for a slow afternoon wander</div>
+              <div class="timeline-time">13:30</div>
+              <div class="timeline-text">🛒 永樂市場 (Yongle Market)</div>
+              <div class="timeline-note">Tainan's oldest covered market — fabric stalls, traditional snacks, old-school vendors. Great for a wander and local colour · <a href="https://maps.app.goo.gl/Gy3gfTDNJBUxVHAh9" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item">
+              <div class="timeline-time">14:30</div>
+              <div class="timeline-text">📷 又又美照相館 (Yoyomei Film Photo Studio)</div>
+              <div class="timeline-note">Indie film photography studio — rent a camera or get portraits taken. A uniquely Tainan experience that everyone walks away obsessed with · <a href="https://www.google.com/maps/search/又又美照相館+台南" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item highlight">
               <div class="timeline-time">16:00</div>
-              <div class="timeline-text">🏡 321 Art Precinct — cafes in Japanese wooden houses</div>
-              <div class="timeline-note">321 Jianye St. Free entry. Coffee in a 1940s wooden house is a very Tainan experience</div>
+              <div class="timeline-text">🏮 神農街 (Shennong Street) golden hour</div>
+              <div class="timeline-note">The lanterns start glowing at dusk — best time to stroll, pop into indie cafes and art galleries along the street · <a href="https://maps.app.goo.gl/mQ7XcBKrLJynFdLm8" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">19:00</div>
               <div class="timeline-text">🍤 Dinner — Shrimp roll (蝦捲) at 周氏蝦捲</div>
               <div class="timeline-note">408 Anping Rd, Anping District. Crispy fried shrimp rolls with mustard — iconic Tainan dish</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">22:30</div>
+              <div class="timeline-text">🍸 Moonrock <span style="background:#d1fae5;color:#065f46;font-size:0.72rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;">✓ Booked</span></div>
+              <div class="timeline-note">Reservation at 22:30 · <a href="https://www.google.com/maps/search/Moonrock+台南" target="_blank">📍 Google Maps</a></div>
             </div>
           </div>
         </details>
@@ -1869,13 +1720,18 @@
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">10:00</div>
-              <div class="timeline-text">🌳 Anping Tree House</div>
-              <div class="timeline-note">108 Gubao St, Anping. Opens 8:30am. Old warehouse swallowed by giant banyan roots — surreal & beautiful</div>
+              <div class="timeline-text">🌳 安平樹屋 (Anping Tree House)</div>
+              <div class="timeline-note">108 Gubao St, Anping. Opens 8:30am. Old warehouse swallowed by giant banyan roots — surreal & beautiful · <a href="https://maps.app.goo.gl/NqfLtroxjqVmKWGc9" target="_blank">📍 Maps</a></div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">11:00</div>
+              <div class="timeline-text">🏘 安平老街 (Anping Old Street)</div>
+              <div class="timeline-note">The heart of historic Anping — browse old shophouses, try 蚵仔酥 (crispy oysters), shrimp crackers and tofu pudding from street vendors · <a href="https://maps.app.goo.gl/5HFgJNXY9YGvFzgb7" target="_blank">📍 Maps</a></div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">12:00</div>
-              <div class="timeline-text">🏘 Anping area lunch & explore</div>
-              <div class="timeline-note">The Anping District has plenty of local lunch spots and old fort ruins to wander around</div>
+              <div class="timeline-time">12:30</div>
+              <div class="timeline-text">🍽 Anping area lunch</div>
+              <div class="timeline-note">Plenty of local lunch spots along Anping Old Street and around the fort ruins</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">14:30</div>
@@ -1893,9 +1749,14 @@
               <div class="timeline-note">180 Haiann Rd, West Central District · Famous Tainan institution — fresh shrimp pan-fried with rice. Simple but iconic local dish, been around for decades</div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">20:30</div>
-              <div class="timeline-text">🍨 Snow ice dessert (雪花冰) + evening stroll</div>
-              <div class="timeline-note">Creamy shaved milk ice with toppings — perfect in the evening heat. Grab one along Shennong Street</div>
+              <div class="timeline-time">20:00</div>
+              <div class="timeline-text">🍸 Bar Home <span style="background:#d1fae5;color:#065f46;font-size:0.68rem;padding:2px 8px;border-radius:8px;font-weight:700;margin-left:6px;vertical-align:middle;">✓ Booked</span></div>
+              <div class="timeline-note">8pm reservation confirmed · <a href="https://www.google.com/maps/search/Bar+Home+Tainan" target="_blank">📍 Google Maps</a></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">22:30</div>
+              <div class="timeline-text">🍨 Late night snow ice (雪花冰)</div>
+              <div class="timeline-note">Creamy shaved milk ice — perfect after the bar. Many dessert spots stay open late around West Central District</div>
             </div>
           </div>
         </details>
@@ -1953,6 +1814,40 @@
           <div class="photo-search-hint">🔍 Search photos</div>
         </a>
       </div>
+
+      <!-- TAINAN FOOD POLL -->
+      <div class="food-poll" id="tainan-food-poll">
+        <div class="food-poll-title">What do you want to eat? <span>Vote</span></div>
+        <p class="food-poll-sub">Pick your name → tap "I want this" → tap shops to see Maps → drag voted dishes into the meal planner below</p>
+        <div class="fp-names-label">Who are you?</div>
+        <div class="fp-names" id="fp-names"></div>
+        <div class="fp-filter-bar" id="fp-filter-bar">
+          <button class="fp-filter fp-active" data-filter="all">All</button>
+          <button class="fp-filter" data-filter="breakfast">🌅 Breakfast</button>
+          <button class="fp-filter" data-filter="lunch">☀️ Lunch</button>
+          <button class="fp-filter" data-filter="dinner">🌙 Dinner</button>
+          <button class="fp-filter" data-filter="snack">🍢 Snack</button>
+          <button class="fp-filter" data-filter="dessert">🍡 Dessert</button>
+          <button class="fp-filter" data-filter="latenight">🌃 Late Night</button>
+          <button class="fp-filter" data-filter="cafe">☕ Café & Tea</button>
+          <button class="fp-filter" data-filter="bar">🍸 Bar</button>
+        </div>
+        <div class="fp-cat-list" id="fp-cat-list"></div>
+        <button class="fp-add-btn" onclick="fpAddDish()">+ Add a dish you found</button>
+        <div class="fp-footer">
+          <button class="fp-copy-btn" id="fp-copy-btn" onclick="fpCopy()">📋 Copy my picks</button>
+          <button class="fp-tally-btn" onclick="fpToggleTally(this)">📊 Group tally</button>
+        </div>
+        <div class="fp-tally" id="fp-tally"></div>
+        <div class="fp-planner">
+          <div class="fp-planner-title">Meal Planner 🗓</div>
+          <p class="fp-planner-sub">Tap a voted dish to select it (purple), then tap a slot to plan it. Tap ✕ to remove.</p>
+          <div class="fp-pool-label">Voted dishes — tap to select 👇</div>
+          <div class="fp-pool" id="fp-pool"></div>
+          <div class="fp-plan-grid" id="fp-plan-grid"></div>
+        </div>
+      </div>
+
       <div class="rec-section">
         <div class="rec-tabs">
           <button class="rec-tab active">🏛 Buildings</button>
@@ -2155,7 +2050,7 @@
         <h2>Back to Taipei</h2>
         <p>Final days — last bites, last cafes, last shopping before heading home</p>
       </div>
-      <div class="city-dates">May 2 – 3</div>
+      <div class="city-dates">May 1 – 3</div>
       <span class="city-chevron">▾</span>
     </button>
     <div class="city-body">
@@ -2188,27 +2083,22 @@
         <p class="day-plans-label">📅 Day by Day</p>
 
         <details class="day-plan">
-          <summary><span class="day-badge">May 2</span><span class="day-plan-title">Back in Taipei — Jiufen & farewell dinner</span><span class="day-chevron">▸</span></summary>
+          <summary><span class="day-badge">May 1</span><span class="day-plan-title">Arrive Taipei — settle in & first night back</span><span class="day-chevron">▸</span></summary>
           <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-time">09:00</div>
-              <div class="timeline-text">☕ Slow morning — Fujin Tree area</div>
-              <div class="timeline-note">A calm neighbourhood stroll to ease back into Taipei</div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">14:00</div>
+              <div class="timeline-text">🚄 HSR Tainan → Taipei (~1hr 45min)</div>
+              <div class="timeline-note">Take shuttle to HSR Tainan Station ~30min before departure · Arrive Taipei Main Station ~16:00</div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">13:00</div>
-              <div class="timeline-text">🏔 Jiufen Old Street (九份老街)</div>
-              <div class="timeline-note">~1hr from Taipei by bus from Zhongxiao Fuxing MRT. Go in the afternoon so you catch the lanterns lighting up at dusk</div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-time">15:00</div>
-              <div class="timeline-text">☕ Tea house with ocean view in Jiufen</div>
-              <div class="timeline-note">Several tea houses overlooking the mountains and sea. Very scenic</div>
+              <div class="timeline-time">~17:00</div>
+              <div class="timeline-text">🏨 Check in to Episode by Hyatt Da'an</div>
+              <div class="timeline-note">Da'an District, Taipei · Drop bags, freshen up</div>
             </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">18:30</div>
-              <div class="timeline-text">🍽 Dinner — 欣葉台菜 (Shin Yeh Taiwanese Cuisine)</div>
-              <div class="timeline-note">Multiple Taipei locations · Classic upscale Taiwanese restaurant — braised pork, oyster vermicelli, crab soup. Book ahead for a group. Perfect farewell Taipei dinner</div>
+              <div class="timeline-time">19:00</div>
+              <div class="timeline-text">🍜 Dinner — Beef Noodles (牛肉麵)</div>
+              <div class="timeline-note">A classic Taipei homecoming bowl. Try 林東芳牛肉麵 (open late, always worth the queue) or 永康牛肉麵 near Da'an · <a href="https://www.google.com/maps/search/林東芳牛肉麵+台北" target="_blank">📍 林東芳</a></div>
             </div>
             <div class="timeline-item highlight">
               <div class="timeline-time">20:30</div>
@@ -2219,32 +2109,67 @@
         </details>
 
         <details class="day-plan">
-          <summary><span class="day-badge">May 3</span><span class="day-plan-title">Last Day — Shopping, views & heading home</span><span class="day-chevron">▸</span></summary>
+          <summary><span class="day-badge">May 2</span><span class="day-plan-title">Back in Taipei — Zhongshan cafes & farewell dinner</span><span class="day-chevron">▸</span></summary>
           <div class="timeline">
             <div class="timeline-item highlight">
-              <div class="timeline-time">08:00</div>
-              <div class="timeline-text">🥟 One last Din Tai Fung</div>
-              <div class="timeline-note">You will regret it if you don't go one more time. Trust us</div>
+              <div class="timeline-time">10:00</div>
+              <div class="timeline-text">☕ 中山站 (Zhongshan MRT) café crawl</div>
+              <div class="timeline-note">One of Taipei's best café neighbourhoods — indie coffee shops, bookstores & boutiques packed into a few walkable blocks. Try Rufous Coffee, Fika Fika, or Monocle Café for a long lazy morning</div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">10:30</div>
-              <div class="timeline-text">🛍 Final shopping — Nanmen Market & Eslite Songyan</div>
-              <div class="timeline-note">Nanmen Market for pineapple cakes and pantry goods. Eslite for design souvenirs and gifts</div>
+              <div class="timeline-time">12:00</div>
+              <div class="timeline-text">🍱 Lunch — 中山 neighbourhood spots</div>
+              <div class="timeline-note">Plenty of casual lunch options nearby — Japanese sets, noodle shops, or grab a bento from a local stand</div>
             </div>
             <div class="timeline-item">
               <div class="timeline-time">14:00</div>
-              <div class="timeline-text">🏔 Elephant Mountain (象山) — city farewell hike</div>
-              <div class="timeline-note">20 min from MRT Xiangshan. Short steep hike up to iconic Taipei 101 views. Free</div>
+              <div class="timeline-text">🛍 Browse — Chifeng St (赤峰街) & design shops</div>
+              <div class="timeline-note">Vintage clothing, indie design studios, vinyl record shops and small galleries. Great for last-minute unique souvenirs</div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-time">17:00</div>
+              <div class="timeline-time">16:00</div>
+              <div class="timeline-text">☕ Afternoon coffee — another round</div>
+              <div class="timeline-note">Pick a second café and wind down before dinner — 中山 has enough options for the whole day</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">18:30</div>
+              <div class="timeline-text">🍽 Dinner — Hosu Fine Dining <span style="background:#d1fae5;color:#065f46;font-size:0.72rem;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:6px;">✓ Booked</span></div>
+              <div class="timeline-note">Fine dining farewell dinner — reservation at 18:30 · <a href="https://www.google.com/maps/search/Hosu+Fine+Dining+Taipei" target="_blank">📍 Google Maps</a></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="day-plan">
+          <summary><span class="day-badge">May 3</span><span class="day-plan-title">Last Day — Final bites & fly home</span><span class="day-chevron">▸</span></summary>
+          <div class="timeline">
+            <div class="timeline-item highlight">
+              <div class="timeline-time">08:30</div>
+              <div class="timeline-text">🥛 Breakfast — 阜杭豆漿</div>
+              <div class="timeline-note">Taipei's most iconic breakfast spot — crispy shaobing (燒餅), flaky egg crepe (蛋餅) & warm soy milk. Opens 5:30am, expect a queue but it moves fast · <a href="https://maps.app.goo.gl/Jn5MbWbhrPnMDiuz6" target="_blank">📍 Google Maps</a></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">10:30</div>
+              <div class="timeline-text">🛍 Final shopping — Nanmen Market</div>
+              <div class="timeline-note">Pineapple cakes, pantry goods & last-minute gifts. Quick and efficient — bags need to close!</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">12:00</div>
               <div class="timeline-text">🧋 Last bubble tea — 春水堂 (Chun Shui Tang)</div>
               <div class="timeline-note">The original inventor of bubble tea. Multiple Taipei locations</div>
             </div>
+            <div class="timeline-item">
+              <div class="timeline-time">13:00</div>
+              <div class="timeline-text">🏨 Back to hotel — pack up & check out</div>
+            </div>
             <div class="timeline-item highlight">
-              <div class="timeline-time">Evening</div>
-              <div class="timeline-text">✈️ Head to Taoyuan Airport — safe travels!</div>
-              <div class="timeline-note">Airport MRT from Taipei Main Station ~45min. Allow plenty of time for check-in</div>
+              <div class="timeline-time">14:30</div>
+              <div class="timeline-text">🚇 Airport MRT from Taipei Main Station</div>
+              <div class="timeline-note">~35–40min to Taoyuan Airport Terminal 1/2. Aim to arrive at the airport by 15:15</div>
+            </div>
+            <div class="timeline-item highlight">
+              <div class="timeline-time">17:45</div>
+              <div class="timeline-text">✈️ Depart Taoyuan Airport — safe travels!</div>
+              <div class="timeline-note">Check in closes ~1hr before · Gate closes 30min before · See you all next trip 🧡</div>
             </div>
           </div>
         </details>
@@ -2434,7 +2359,7 @@
       </div>
       <div class="tip-item">
         <span class="tip-icon">🚄</span>
-        <div><h4>HSR High Speed Rail</h4><p>Taipei → Changhua → Chiayi → Tainan. Book in advance at thsrc.com.tw</p></div>
+        <div><h4>HSR High Speed Rail</h4><p>Taipei → Taichung → Tainan. Book in advance at thsrc.com.tw</p></div>
       </div>
       <div class="tip-item">
         <span class="tip-icon">🚲</span>
@@ -2462,7 +2387,7 @@
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 25 · Taipei</strong><br><span style="color:var(--gray);">Cafes, beef noodles, KTV</span><br><strong style="color:var(--dark);">NT$1,500</strong></div>
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 26 · Taichung</strong><br><span style="color:var(--gray);">Miyahara, dinner, Fengjia</span><br><strong style="color:var(--dark);">NT$1,200</strong></div>
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 27 · Lukang</strong><br><span style="color:var(--gray);">Taxis, lunch, snacks, dinner</span><br><strong style="color:var(--dark);">NT$1,500</strong></div>
-              <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 28 · Chiayi</strong><br><span style="color:var(--gray);">Turkey rice, food street</span><br><strong style="color:var(--dark);">NT$800</strong></div>
+              <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 28 · Travel Day</strong><br><span style="color:var(--gray);">HSR to Tainan, check-in, dinner</span><br><strong style="color:var(--dark);">NT$500</strong></div>
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 29 · Tainan Day 1</strong><br><span style="color:var(--gray);">Beef soup, Dan Zai, shrimp rolls</span><br><strong style="color:var(--dark);">NT$800</strong></div>
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>Apr 30 · Tainan Day 2</strong><br><span style="color:var(--gray);">Milkfish, lunch, shrimp rice</span><br><strong style="color:var(--dark);">NT$1,000</strong></div>
               <div style="background:#f9f9f9; border-radius:8px; padding:8px 12px;"><strong>May 1 · Travel Day</strong><br><span style="color:var(--gray);">Last Tainan breakfast + HSR</span><br><strong style="color:var(--dark);">NT$500</strong></div>
@@ -2715,6 +2640,453 @@
       val.textContent = 'Memories made';
     }
   })();
+  // ── TAINAN FOOD POLL v2 ──
+  (function () {
+    // ── Firebase config — fill in your values ──────────────────────────────
+    // Setup: console.firebase.google.com → new project → Realtime Database
+    // → Start in test mode → copy databaseURL below, then copy apiKey from
+    // Project Settings → Your apps → Web
+    const FB_CONFIG = {
+      apiKey:      'AIzaSyDdEdSktBdRbDczzNnVveenqEGV31SV_ck',
+      databaseURL: 'https://taiwan-trip-2026-d1201-default-rtdb.asia-southeast1.firebasedatabase.app',   // e.g. https://my-trip-abc-default-rtdb.firebaseio.com
+    };
+    const FB_PATH = 'tainan_poll';
+    // ───────────────────────────────────────────────────────────────────────
+
+    const LS_ACTIVE = 'tainan_poll_active';
+    const FB_READY  = FB_CONFIG.apiKey !== 'REPLACE_WITH_YOUR_API_KEY';
+
+    let db = null, dbRef = null;
+    if (FB_READY) {
+      try {
+        if (!firebase.apps.length) firebase.initializeApp(FB_CONFIG);
+        db    = firebase.database();
+        dbRef = db.ref(FB_PATH);
+      } catch(e) { console.warn('Firebase init failed:', e); }
+    }
+
+    const MEAL_LABEL = { breakfast:'🌅 Breakfast', lunch:'☀️ Lunch', dinner:'🌙 Dinner', snack:'🍢 Snack', dessert:'🍡 Dessert', latenight:'🌃 Late Night', cafe:'☕ Café & Tea', bar:'🍸 Bar' };
+    const PLAN_DAYS  = ['Apr 29 (Tue)','Apr 30 (Wed)','May 1 (Thu)'];
+    const PLAN_ROWS  = [
+      { id:'breakfast', label:'🌅\nBreakfast' },
+      { id:'lunch',     label:'☀️\nLunch'     },
+      { id:'dinner',    label:'🌙\nDinner'    },
+      { id:'snack',     label:'🍢\nSnacks &\nLate Night' },
+    ];
+
+    const BASE_CATS = [
+      { id:'beef-soup',    e:'🥣', name:'Beef Soup',            zh:'牛肉湯',   meal:'breakfast', note:'Sold out by 10am', shops:[
+        { n:'億哥牛肉湯',             tip:'聽說很好喝 ⭐', maps:'https://maps.app.goo.gl/2UMv6mCNWHDj9d7m8' },
+        { n:'文章牛肉湯 安平總店',                       maps:'https://maps.app.goo.gl/szVhNdLyTdhMLGGLA'  },
+        { n:'阿堂牛肉湯 安平店',                         maps:'https://maps.app.goo.gl/WQj9WZr8LmyMmUxW8'  },
+        { n:'鴻品牛肉湯',                                maps:'https://maps.app.goo.gl/mFZwtp2yUjHRZxkBA'  },
+        { n:'西羅殿牛肉湯',           tip:'肉有點柴',    maps:'https://maps.app.goo.gl/CVNTYy6mDexeoKfGA'  },
+      ]},
+      { id:'hot-noodle',   e:'🍲', name:'Hot Pot Noodles',       zh:'鍋燒意麵', meal:'dinner', shops:[
+        { n:'迦南水果店',              tip:'在地人推薦，只開一二 ⭐', maps:'https://maps.app.goo.gl/w7UnVbtyQUT3NH7r5' },
+        { n:'醇涎坊古早味鍋燒意麵',                               maps:'https://maps.app.goo.gl/zsoWarrWseDF3Yvu8'  },
+        { n:'誠實鍋燒',               tip:'無訂位服務',             maps:'https://maps.app.goo.gl/Bc3KHMfqQMHMvfxi8'  },
+      ]},
+      { id:'shrimp-rice',  e:'🍚', name:'Shrimp Rice',            zh:'蝦仁飯',   meal:'lunch', shops:[
+        { n:'矮仔成蝦仁飯', tip:'Tainan institution, been around for decades', maps:'https://www.google.com/maps/search/矮仔成蝦仁飯+台南' },
+      ]},
+      { id:'lard-rice',    e:'🍶', name:'Lard Mixed Rice',         zh:'豬油拌飯', meal:'lunch', note:'Simple, rich & deeply Tainan', shops:[
+        { n:'鼎富發豬油拌飯', maps:'https://www.google.com/maps/search/鼎富發豬油拌飯+台南' },
+      ]},
+      { id:'shrimp-roll',  e:'🍤', name:'Shrimp Roll',           zh:'蝦捲',     meal:'snack', shops:[
+        { n:'周氏蝦捲 老店',  maps:'https://maps.app.goo.gl/WpwM6w6FmuhxUub5A' },
+        { n:'府城黃家蝦捲',   maps:'https://maps.app.goo.gl/41q1J7QBxcsLckoE6' },
+      ]},
+      { id:'sticky-rice',  e:'🍚', name:'Sticky Rice',           zh:'米糕',     meal:'lunch', shops:[
+        { n:'無名米糕',       maps:'https://maps.app.goo.gl/hXr5qPUQjLFUssrf8' },
+        { n:'下大道蘭米糕',   maps:'https://maps.app.goo.gl/6YGRmoYowqkTPeiS9' },
+      ]},
+      { id:'bfast-trad',   e:'🥛', name:'Soy Milk Breakfast',     zh:'豆漿早餐',  meal:'breakfast', note:'Traditional Tainan morning', shops:[
+        { n:'包手幸福豆漿',   maps:'https://maps.app.goo.gl/AucdRB98FfCwWr199' },
+        { n:'生の早點',       maps:'https://maps.app.goo.gl/yy5QL4HHRK1Ua5Cf7' },
+        { n:'豆奶宗',         maps:'https://maps.app.goo.gl/GaBkbzPrykkiLQmS7' },
+      ]},
+      { id:'bfast-modern', e:'🍔', name:'Tainan-only Fast Food Chain', zh:'丹丹漢堡',  meal:'breakfast', note:'Tainan-only fast food chain', shops:[
+        { n:'丹丹漢堡',       maps:'https://maps.app.goo.gl/fiqcpF9UDRK45R4p9' },
+      ]},
+      { id:'milkfish',     e:'🐟', name:'Milkfish Soup',         zh:'虱目魚湯', meal:'breakfast', shops:[
+        { n:'川泰號虱目魚丸', maps:'https://maps.app.goo.gl/35sptnELoJG2k42EA' },
+        { n:'阿興虱目魚',     maps:'https://maps.app.goo.gl/3bnPV58N9G7M31vJ6' },
+      ]},
+      { id:'mackerel',     e:'🦈', name:'Mackerel Thick Soup',   zh:'土魠魚羹', meal:'lunch', shops:[
+        { n:'阿安紅燒土魠魚羹',  maps:'https://maps.app.goo.gl/gSgaxUZh6D3x8szD6' },
+        { n:'開元紅燒𩵚魠魚羹', maps:'https://maps.app.goo.gl/x7UJGLTjWG8xwvQu6' },
+      ]},
+      { id:'noodles',      e:'🍜', name:'Noodles & Rice',        zh:'意麵小吃', meal:'lunch', shops:[
+        { n:'民生意麵滷味',   tip:'對面可去宣福居喝茶', maps:'https://maps.app.goo.gl/gSgaxUZh6D3x8szD6' },
+        { n:'香圃麵店',                                maps:'https://maps.app.goo.gl/cZp4trFSXE4ngiio7' },
+        { n:'蔡桑麵食館',                              maps:'https://maps.app.goo.gl/98MeraUTXretoNVf8'  },
+      ]},
+      { id:'eel-noodle',   e:'🍝', name:'Eel Noodles',           zh:'鱔魚意麵', meal:'lunch', shops:[
+        { n:'福昇小食鱔魚意麵', maps:'https://maps.app.goo.gl/N8rudKm2EoFQik8M7' },
+        { n:'城邊真味鱔魚意麵', maps:'https://maps.app.goo.gl/wajRx3bLNDdzPZ9R6' },
+      ]},
+      { id:'sausage',      e:'🌭', name:'Sausage & Cured Meats', zh:'香腸熟肉', meal:'snack', shops:[
+        { n:'阿龍香腸熟肉',              tip:'10:30 開始賣', maps:'https://maps.app.goo.gl/V7i9Lr2xy4EY4QrBA' },
+        { n:'東山古腸新古早味糯米大腸',                    maps:'https://maps.app.goo.gl/tuprhkYQvnvHLQPdA' },
+      ]},
+      { id:'fish-cake',    e:'⚫', name:'Fish Cakes',             zh:'黑輪',     meal:'snack', shops:[
+        { n:'阿輝黑輪', maps:'https://maps.app.goo.gl/85qZR5FKPYGFyzTD6' },
+      ]},
+      { id:'coffin-bread', e:'🍞', name:'Coffin Bread',          zh:'棺材板',   meal:'snack', shops:[
+        { n:'赤崁棺材板', maps:'https://maps.app.goo.gl/UHGVCVT7RjYCChiJ8' },
+      ]},
+      { id:'tofu-pudding', e:'🍡', name:'Tofu Pudding',          zh:'豆花',     meal:'dessert', shops:[
+        { n:'無名豆花',           maps:'https://maps.app.goo.gl/D5wGqi7tLuxiVLS87' },
+        { n:'八寶彬 圓仔惠',      maps:'https://maps.app.goo.gl/BjPF24KzHHCAMd1q7' },
+        { n:'德記古早味汕頭豆花', maps:'https://maps.app.goo.gl/vyKkttjBYuwy4mGD7' },
+        { n:'修安扁擔豆花',       maps:'https://maps.app.goo.gl/t9nfkUAyn5BFLoi57' },
+      ]},
+      { id:'tofu-ice',     e:'🍧', name:'Almond Tofu Ice',       zh:'杏仁豆腐冰', meal:'dessert', shops:[
+        { n:'懷舊小棧杏仁豆腐冰', maps:'https://maps.app.goo.gl/YVCeo84qyWgse6HBA' },
+        { n:'體育公園杏仁豆腐冰', maps:'https://maps.app.goo.gl/rk8BMN3qK4KDNVFWA' },
+      ]},
+      { id:'sweet-rice',   e:'🍢', name:'Sweet Rice Cake',       zh:'白糖粿',   meal:'snack', shops:[
+        { n:'林家茂子白糖粿蕃薯椪', maps:'https://maps.app.goo.gl/Jjj1ewphqwj72pot6' },
+        { n:'味珍白糖粿',           maps:'https://maps.app.goo.gl/9h4YLPLxDzsCfnA2A' },
+      ]},
+      { id:'crispy-chx',   e:'🍗', name:'Crispy Fried Chicken',  zh:'鹹酥雞',   meal:'latenight', shops:[
+        { n:'𤦔鹹酥雞-安平店',       maps:'https://maps.app.goo.gl/dZ2m1bFo51qr5pxH7' },
+        { n:'喵嫂鹹酥雞',  tip:'提前一周線上訂 ⭐', maps:'https://maps.app.goo.gl/S4KwvS6cn8STwbjbA' },
+        { n:'金龐鹽酥雞',            maps:'https://maps.app.goo.gl/EQFZQzb4TsDFxP8q9' },
+        { n:'小北成功夜市吃味鮮香酥雞', maps:'https://maps.app.goo.gl/jTmDLcuKDHJMeL7o8' },
+      ]},
+      { id:'hotpot',       e:'🫕', name:'White Pepper Hot Pot',  zh:'胡椒白菜雞', meal:'dinner', shops:[
+        { n:'馨味胡椒白菜雞', maps:'https://maps.app.goo.gl/AQL8rLcYrRza9U1T9' },
+      ]},
+      { id:'braised-rice', e:'🍛', name:'Braised Pork Rice',     zh:'肉燥飯',   meal:'lunch', shops:[
+        { n:'VASO弘肉燥飯舖 安平店', tip:'必比登推薦 ⭐' },
+      ]},
+      { id:'rice-cake',    e:'🎑', name:'Rice Cake',             zh:'米粿',     meal:'snack', shops:[
+        { n:'阿文米粿', maps:'https://maps.app.goo.gl/qGWA1CYH2P4obmMj9' },
+      ]},
+      { id:'handshake-tea',e:'🧋', name:'Hand-Shaken Tea',        zh:'手搖',     meal:'cafe', shops:[
+        { n:'揣茶',                                maps:'https://maps.app.goo.gl/4pya4iKUXdF8xgvy9' },
+        { n:'万茶川日本茶專賣店', tip:'小吳推薦 ⭐', maps:'https://maps.app.goo.gl/A26pk36H9cSchQ3v5' },
+        { n:'宣福居',                              maps:'https://maps.app.goo.gl/FBrtdrnkN7xkkyVA9' },
+      ]},
+      { id:'teahouse',     e:'🫖', name:'Tea House',              zh:'茶室',     meal:'cafe', shops:[
+        { n:'蔛菟 HUTU 茶館',                                         maps:'https://maps.app.goo.gl/t3bxKNoPzYE1W1XHA' },
+        { n:'壹二茶堂 One2teahouse',  tip:'預約制',                   maps:'https://maps.app.goo.gl/LMnwpC3WyaK9D1BUA' },
+        { n:'Lys Tea 莉蒔',                                           maps:'https://maps.app.goo.gl/wjtibwg5mv3iKtEe7'  },
+        { n:'六合境 茶弥 SaBiSKi',    tip:'在2F',                    maps:'https://maps.app.goo.gl/Vptj5uDoPrnKs5d56' },
+        { n:'奉茶.十八卯',                                            maps:'https://maps.app.goo.gl/G13TPiTfgkyPmngp7'  },
+      ]},
+      { id:'cafe',         e:'☕', name:'Cafe',                   zh:'咖啡廳',   meal:'cafe', shops:[
+        { n:'存憶 Cafe Bar',                                          maps:'https://maps.app.goo.gl/8ax5nm3eHebJu27B7'  },
+        { n:'稲満珈琲 inamitsu cafe',  tip:'營業時間依IG為主',        maps:'https://maps.app.goo.gl/fqa14HB6AQ6ebq2Q8'  },
+        { n:'here Kyoto 台南｜開山・清水',                            maps:'https://maps.app.goo.gl/JruqLMXjzVKLYjbi7'  },
+        { n:'古意人咖啡',                                             maps:'https://maps.app.goo.gl/63otfe2daC2iywL66'  },
+        { n:'冬日',                    tip:'營業資訊以IG為主，brunch 位子少', maps:'https://maps.app.goo.gl/DZWmA7HXYRQtu6zG9' },
+        { n:'日波 eventide',                                          maps:'https://maps.app.goo.gl/hHeD8hjS2GM5yZWz5'  },
+        { n:'鄰近 Coffee near',                                       maps:'https://maps.app.goo.gl/wf4NnKbS76LaMHu5A'  },
+        { n:'栮•咖啡',                                                maps:'https://maps.app.goo.gl/rUL7mZmkqiFyhnjS8'  },
+        { n:'粼粼',                                                   maps:'https://maps.app.goo.gl/PKo935KrEPGErYCv7'  },
+        { n:'南美春室 The POOL',                                      maps:'https://maps.app.goo.gl/saDzoa9KASgXmE1r7'  },
+      ]},
+      { id:'bar',          e:'🍸', name:'Bar & Drinks',            zh:'酒吧',     meal:'bar', shops:[
+        { n:'Bar Home',               tip:'✓ Booked Apr 30 · 8pm',  maps:'https://www.google.com/maps/search/Bar+Home+台南' },
+        { n:'TCRC',                   tip:'Tainan cocktail institution — creative & classic', maps:'https://www.google.com/maps/search/TCRC+台南' },
+        { n:'Indulge Experimental Bistro', tip:'Award-winning creative cocktails',           maps:'https://www.google.com/maps/search/Indulge+Experimental+Bistro+台南' },
+        { n:'Iku Bar',                tip:'Intimate craft cocktail bar',                     maps:'https://www.google.com/maps/search/Iku+Bar+台南' },
+        { n:'吧台人 Bartender',       tip:'Local favourite, lively atmosphere',              maps:'https://www.google.com/maps/search/吧台人+台南' },
+      ]},
+    ];
+
+    const DEFAULT_NAMES = ['Susan','Yanni','Jo','Jase','Katie','Sol','Regan'];
+    let names  = DEFAULT_NAMES.slice();
+    let votes  = {};
+    let active = localStorage.getItem(LS_ACTIVE) || '';
+    let custom = [];
+    let plan   = {};
+    let filter = 'all';
+    let selChip = null;
+
+    function allCats() { return [...BASE_CATS, ...custom]; }
+
+    function save() {
+      localStorage.setItem(LS_ACTIVE, active);
+      if (dbRef) {
+        dbRef.set({ votes, custom, plan }).catch(console.error);
+      } else {
+        // localStorage fallback when Firebase isn't configured
+        localStorage.setItem('tainan_poll_votes',  JSON.stringify(votes));
+        localStorage.setItem('tainan_poll_custom', JSON.stringify(custom));
+        localStorage.setItem('tainan_poll_plan',   JSON.stringify(plan));
+      }
+    }
+
+    // ── Names ──
+    function renderNames() {
+      const el = document.getElementById('fp-names');
+      if (!el) return;
+      el.innerHTML = '';
+      names.forEach((name, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'fp-name-btn' + (active === name ? ' fp-active' : '');
+        btn.textContent = name;
+
+        // Edit icon — separate button so it works reliably on iOS touch
+        const editBtn = document.createElement('button');
+        editBtn.className = 'fp-edit-icon';
+        editBtn.textContent = '✎';
+        editBtn.setAttribute('aria-label', 'Rename ' + name);
+        editBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const n = (prompt('Rename to:', name) || '').trim();
+          if (!n) return;
+          allCats().forEach(f => { if (votes[f.id]) { const x = votes[f.id].indexOf(name); if (x >= 0) votes[f.id][x] = n; } });
+          if (active === name) active = n;
+          names[i] = n;
+          save(); renderNames(); renderCats();
+        });
+        btn.appendChild(editBtn);
+
+        btn.addEventListener('click', function () {
+          active = name; save(); renderNames(); renderCats();
+        });
+        el.appendChild(btn);
+      });
+    }
+
+    // ── Categories ──
+    function renderCats() {
+      const el = document.getElementById('fp-cat-list');
+      if (!el) return;
+      el.innerHTML = '';
+      allCats().forEach(cat => {
+        const voters  = votes[cat.id] || [];
+        const hasVote = !!(active && voters.includes(active));
+        const visible = filter === 'all' || cat.meal === filter;
+        const card = document.createElement('div');
+        card.className = ['fp-cat-card', hasVote ? 'fp-voted' : '', !visible ? 'fp-hidden' : ''].filter(Boolean).join(' ');
+        card.dataset.meal = cat.meal;
+        const shopRows = cat.shops.map(s =>
+          '<div class="fp-shop-item">' +
+          '<div class="fp-shop-name-wrap"><div class="fp-shop-name">' + s.n + '</div>' +
+          (s.tip ? '<div class="fp-shop-tip">' + s.tip + '</div>' : '') +
+          '</div>' +
+          (s.maps ? '<a class="fp-maps-link" href="' + s.maps + '" target="_blank">📍 Maps</a>' : '') +
+          '</div>'
+        ).join('');
+        card.innerHTML =
+          '<div class="fp-cat-body">' +
+          '<span class="fp-cat-emoji-lg">' + cat.e + '</span>' +
+          '<div class="fp-cat-name">' + cat.name + '</div>' +
+          '<div class="fp-cat-zh">' + cat.zh + '</div>' +
+          '<span class="fp-meal-tag">' + (MEAL_LABEL[cat.meal] || cat.meal) + '</span>' +
+          '</div>' +
+          '<div class="fp-cat-footer">' +
+          (voters.length ? '<span class="fp-count-badge">' + voters.length + ' want this</span>' : '') +
+          '<button class="fp-vote-btn' + (hasVote ? ' fp-voted-btn' : '') + '">' + (hasVote ? '✓ Want it' : 'I want this') + '</button>' +
+          (cat.shops.length ? '<button class="fp-expand-btn">' + cat.shops.length + ' options ›</button>' : '') +
+          '</div>' +
+          '<div class="fp-shops">' + shopRows + '</div>';
+
+        card.querySelector('.fp-cat-body').addEventListener('click', () => {
+          if (!active) {
+            const np = document.getElementById('fp-names');
+            if (np) { np.classList.add('fp-nudge'); setTimeout(() => np.classList.remove('fp-nudge'), 800); }
+            return;
+          }
+          if (!votes[cat.id]) votes[cat.id] = [];
+          const idx = votes[cat.id].indexOf(active);
+          if (idx >= 0) votes[cat.id].splice(idx, 1); else votes[cat.id].push(active);
+          save(); renderCats(); renderPool();
+          const t = document.getElementById('fp-tally');
+          if (t && t.classList.contains('fp-open')) renderTally();
+        });
+        card.querySelector('.fp-vote-btn').addEventListener('click', e => {
+          e.stopPropagation();
+          card.querySelector('.fp-cat-body').click();
+        });
+        card.querySelector('.fp-expand-btn').addEventListener('click', e => {
+          e.stopPropagation(); card.classList.toggle('fp-open');
+        });
+        el.appendChild(card);
+      });
+    }
+
+    // ── Filters ──
+    document.getElementById('fp-filter-bar').querySelectorAll('.fp-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('fp-filter-bar').querySelectorAll('.fp-filter').forEach(b => b.classList.remove('fp-active'));
+        btn.classList.add('fp-active');
+        filter = btn.dataset.filter;
+        document.querySelectorAll('#fp-cat-list .fp-cat-card').forEach(card => {
+          card.classList.toggle('fp-hidden', filter !== 'all' && card.dataset.meal !== filter);
+        });
+      });
+    });
+
+    // ── Add custom dish ──
+    window.fpAddDish = function () {
+      const name = (prompt('Dish name (English):') || '').trim(); if (!name) return;
+      const zh   = (prompt('Chinese name (optional):') || '').trim();
+      const meal = (prompt('Meal type — breakfast / lunch / dinner / snack / dessert / latenight:') || 'snack').trim();
+      const sn   = (prompt('Restaurant name (optional):') || '').trim();
+      const sm   = (prompt('Google Maps link (optional):') || '').trim();
+      const shops = sn ? [{ n: sn, maps: sm || undefined }] : [];
+      custom.push({ id: 'c' + Date.now(), e: '🍽', name, zh, meal, shops });
+      save(); renderCats(); renderPool();
+    };
+
+    // ── Copy picks ──
+    window.fpCopy = function () {
+      if (!active) { alert('Pick your name first!'); return; }
+      const mine = allCats().filter(f => (votes[f.id] || []).includes(active));
+      if (!mine.length) { alert('Vote for some dishes first!'); return; }
+      const text = active + "'s Tainan food picks \uD83C\uDF5C\n" + mine.map(f => f.e + ' ' + f.name + ' ' + f.zh).join('\n');
+      const btn = document.getElementById('fp-copy-btn');
+      const succeed = () => { if (btn) { btn.textContent = '✓ Copied!'; setTimeout(() => btn.textContent = '📋 Copy my picks', 2500); } };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(succeed).catch(() => {
+          // Fallback for iOS when clipboard API is blocked
+          const ta = document.createElement('textarea');
+          ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+          document.body.appendChild(ta); ta.focus(); ta.select();
+          try { document.execCommand('copy'); succeed(); } catch(_) { prompt('Copy and share in group chat:', text); }
+          document.body.removeChild(ta);
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0;';
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        try { document.execCommand('copy'); succeed(); } catch(_) { prompt('Copy and share in group chat:', text); }
+        document.body.removeChild(ta);
+      }
+    };
+
+    // ── Group tally ──
+    function renderTally() {
+      const el = document.getElementById('fp-tally'); if (!el) return;
+      const rows = allCats().map(f => ({ ...f, v: votes[f.id] || [] })).filter(f => f.v.length).sort((a,b) => b.v.length - a.v.length);
+      if (!rows.length) { el.innerHTML = '<div class="fp-no-votes">No votes yet.</div>'; return; }
+      const max = rows[0].v.length || 1;
+      el.innerHTML = '<div class="fp-tally-heading">Group Tally</div>' + rows.map(f =>
+        '<div class="fp-tally-row"><span class="fp-tally-emoji">' + f.e + '</span>' +
+        '<span class="fp-tally-label">' + f.name + ' ' + f.zh + '</span>' +
+        '<div class="fp-tally-bar-bg"><div class="fp-tally-bar" style="width:' + Math.round(f.v.length/max*100) + '%"></div></div>' +
+        '<span class="fp-tally-num">' + f.v.length + '</span></div>' +
+        '<div class="fp-voter-row">' + f.v.map(v => '<span class="fp-voter-chip">' + v + '</span>').join('') + '</div>'
+      ).join('');
+    }
+
+    window.fpToggleTally = function (btn) {
+      const el = document.getElementById('fp-tally'); if (!el) return;
+      el.classList.toggle('fp-open');
+      btn.textContent = el.classList.contains('fp-open') ? '\u25b2 Hide tally' : '\uD83D\uDCCA Group tally';
+      if (el.classList.contains('fp-open')) renderTally();
+    };
+
+    // ── Planner pool ──
+    function renderPool() {
+      const el = document.getElementById('fp-pool'); if (!el) return;
+      const voted = allCats().map(f => ({ ...f, cnt: (votes[f.id] || []).length })).filter(f => f.cnt > 0).sort((a,b) => b.cnt - a.cnt);
+      if (!voted.length) { el.innerHTML = '<span class="fp-pool-empty">Vote for dishes above to see them here</span>'; return; }
+      el.innerHTML = '';
+      voted.forEach(cat => {
+        const chip = document.createElement('div');
+        chip.className = 'fp-chip' + (selChip === cat.id ? ' fp-selected' : '');
+        chip.dataset.id = cat.id;
+        chip.draggable = true;
+        chip.innerHTML = '<span class="fp-chip-emoji">' + cat.e + '</span>' + cat.name + '<span class="fp-chip-votes">' + cat.cnt + '</span>';
+        chip.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', cat.id); });
+        chip.addEventListener('click', () => {
+          selChip = (selChip === cat.id) ? null : cat.id;
+          renderPool(); renderGrid();
+        });
+        el.appendChild(chip);
+      });
+    }
+
+    // ── Planner grid ──
+    function renderGrid() {
+      const el = document.getElementById('fp-plan-grid'); if (!el) return;
+      el.innerHTML = '';
+      // header row
+      el.appendChild(Object.assign(document.createElement('div'), { className: 'fp-plan-day-hdr blank' }));
+      PLAN_DAYS.forEach(d => el.appendChild(Object.assign(document.createElement('div'), { className: 'fp-plan-day-hdr', textContent: d })));
+      // meal rows
+      PLAN_ROWS.forEach(row => {
+        const lbl = document.createElement('div');
+        lbl.className = 'fp-plan-meal-lbl';
+        lbl.style.whiteSpace = 'pre-line';
+        lbl.textContent = row.label;
+        el.appendChild(lbl);
+        PLAN_DAYS.forEach((_, di) => {
+          const key  = di + '-' + row.id;
+          const zone = document.createElement('div');
+          zone.className = 'fp-drop-zone' + (selChip ? ' fp-ready' : '');
+          zone.dataset.key = key;
+          zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('fp-over'); });
+          zone.addEventListener('dragleave', () => zone.classList.remove('fp-over'));
+          zone.addEventListener('drop', e => {
+            e.preventDefault(); zone.classList.remove('fp-over');
+            placeInSlot(key, e.dataTransfer.getData('text/plain'));
+          });
+          zone.addEventListener('click', () => {
+            if (selChip) { placeInSlot(key, selChip); selChip = null; renderPool(); }
+          });
+          (plan[key] || []).forEach(catId => {
+            const cat = allCats().find(c => c.id === catId); if (!cat) return;
+            const sc = document.createElement('div');
+            sc.className = 'fp-slot-chip';
+            sc.innerHTML = '<span class="fp-slot-chip-e">' + cat.e + '</span>' + cat.name + '<button class="fp-slot-rm" title="Remove">\u2715</button>';
+            sc.querySelector('.fp-slot-rm').addEventListener('click', e => {
+              e.stopPropagation();
+              plan[key] = (plan[key] || []).filter(id => id !== catId);
+              save(); renderGrid();
+            });
+            zone.appendChild(sc);
+          });
+          if (!(plan[key] || []).length) {
+            const hint = document.createElement('div');
+            hint.className = 'fp-zone-hint';
+            hint.textContent = selChip ? 'Tap to place' : '+';
+            zone.appendChild(hint);
+          }
+          el.appendChild(zone);
+        });
+      });
+    }
+
+    function placeInSlot(key, catId) {
+      if (!catId) return;
+      if (!plan[key]) plan[key] = [];
+      if (!plan[key].includes(catId)) plan[key].push(catId);
+      save(); renderGrid();
+    }
+
+    // ── Init ──
+    if (dbRef) {
+      // Firebase mode: real-time sync across all devices
+      dbRef.on('value', snap => {
+        const data = snap.val() || {};
+        names  = DEFAULT_NAMES.slice();
+        votes  = data.votes  || {};
+        custom = data.custom || [];
+        plan   = data.plan   || {};
+        // Keep active selection local
+        if (active && !names.includes(active)) active = '';
+        renderNames(); renderCats(); renderPool(); renderGrid();
+      });
+    } else {
+      // localStorage fallback
+      names  = JSON.parse(localStorage.getItem('tainan_poll_names')  || 'null') || DEFAULT_NAMES.slice();
+      votes  = JSON.parse(localStorage.getItem('tainan_poll_votes')  || '{}');
+      custom = JSON.parse(localStorage.getItem('tainan_poll_custom') || '[]');
+      plan   = JSON.parse(localStorage.getItem('tainan_poll_plan')   || '{}');
+      renderNames(); renderCats(); renderPool(); renderGrid();
+    }
+  })();
+
+
 </script>
 
 </body>
